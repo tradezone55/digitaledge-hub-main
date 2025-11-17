@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About DigitalEdge Learning Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        .header {
+            background: #000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo-star {
+            color: #00ff00;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .support-btn {
+            background: transparent;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .support-btn:hover {
+            background: #00ff00;
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #ff4500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-icon {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section Styling */
+        .section {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            color: #ff4500;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #333;
+        }
+
+        .section h3 {
+            color: #00ff00;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff00;
+        }
+
+        .feature-card h4 {
+            color: #ff4500;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .benefits-list li {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: #0f0f0f;
+            border-left: 3px solid #00ff00;
+            border-radius: 4px;
+            color: #ccc;
+            font-size: 1.05rem;
+        }
+
+        /* Video Container */
+        .video-container {
+            background: #0f0f0f;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .video-placeholder {
+            background: #000;
+            border: 2px dashed #555;
+            border-radius: 8px;
+            padding: 4rem 2rem;
+            color: #777;
+            font-size: 1.1rem;
+        }
+
+        .video-placeholder p {
+            color: #777;
+        }
+
+        /* Support Section */
+        .support-section {
+            background: linear-gradient(135deg, #1a2a1a 0%, #1a1a1a 100%);
+            border: 2px solid #00ff00;
+        }
+
+        .support-cta {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .support-cta .cta-button {
+            display: inline-block;
+            background: #00ff00;
+            color: #000;
+            padding: 1rem 3rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .support-cta .cta-button:hover {
+            background: #00cc00;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        /* Supporters Grid */
+        .supporters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .supporter-card {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Roadmap Items */
+        .roadmap-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .roadmap-list li {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: #0f0f0f;
+            border-left: 3px solid #ff4500;
+            border-radius: 4px;
+            color: #ccc;
+            font-size: 1.05rem;
+        }
+
+        .roadmap-list li::before {
+            content: "🔜 ";
+            margin-right: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item h4 {
+            color: #00ff00;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-item p {
+            color: #aaa;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+            padding: 2rem;
+            background: #0f0f0f;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .contact-info a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Creator */
+        .creator-profile {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: #0f0f0f;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .creator-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #00ff00;
+            flex-shrink: 0;
+        }
+
+        .creator-info h3 {
+            margin-top: 0;
+            color: #ff4500;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .creator-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <a href="/" class="logo">
+            <span class="logo-star">⭐</span>
+            <span>DigitalEdge</span>
+        </a>
+        <nav class="nav-links">
+            <a href="/">Systems</a>
+            <a href="/about">About</a>
+            <button class="support-btn" onclick="scrollToSupport()">Support</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>
+            <span class="hero-icon">⚡</span>
+            <span>About DigitalEdge Learning Systems</span>
+        </h1>
+        <p>Free exam preparation tools built by educators, for learners.</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Mission Section -->
+        <section class="section">
+            <h2>Our Mission</h2>
+            <p>
+                DigitalEdge was created to solve a simple problem: students need quality, accessible practice tools to succeed in their IT certifications and technical courses. As an instructor in the school and college system, I saw students struggling to find affordable, effective exam simulators and study resources. So I built this hub.
+            </p>
+            <p>
+                <strong style="color: #00ff00;">Our commitment:</strong> DigitalEdge will always be free for students and learners. Every tool here is designed with real classroom experience in mind: timed practice, bilingual support, detailed explanations, and realistic exam environments.
+            </p>
+        </section>
+
+        <!-- What You'll Find Here -->
+        <section class="section">
+            <h2>What You'll Find Here</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>💻 A+ Certification System</h4>
+                    <p>Full exam practice with real-world scenarios</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌐 Network+ Mastery</h4>
+                    <p>Interactive preparation for CompTIA Network+</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🧮 VLSM Calculator</h4>
+                    <p>Visualize and master subnetting</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔒 Security+ Simulator</h4>
+                    <p>Domain practice with review and auto-timer</p>
+                </div>
+                <div class="feature-card">
+                    <h4>☁️ AWS Cloud Practitioner</h4>
+                    <p>Full exam simulator with detailed review</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🐍 Python Exam Simulator</h4>
+                    <p>Bilingual Python certification practice</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📡 CCNA Exam Simulator</h4>
+                    <p>Full exam with bilingual support and history</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📝 A+ Quiz System</h4>
+                    <p>Test your hardware and software knowledge</p>
+                </div>
+            </div>
+
+            <h3>All Systems Feature:</h3>
+            <ul class="benefits-list">
+                <li>✅ Bilingual support (English/Spanish)</li>
+                <li>✅ Timed, realistic exam conditions</li>
+                <li>✅ Detailed explanations for every question</li>
+                <li>✅ Progress tracking and review tools</li>
+                <li>✅ Neon UI with auto-timer functionality</li>
+            </ul>
+        </section>
+
+        <!-- Video Section -->
+        <section class="section">
+            <h2>Welcome Video</h2>
+            <div class="video-container">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SquzgKGX3_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p style="margin-top: 1rem; text-align: center; color: #aaa; font-style: italic;">A personal message from Herman Hall about DigitalEdge and our mission to make quality exam prep accessible to all students.</p>
+            </div>
+        </section>
+
+        <!-- About the Creator -->
+        <section class="section">
+            <h2>About the Creator</h2>
+            <div class="creator-profile">
+                <div class="creator-avatar">👨‍🏫</div>
+                <div class="creator-info">
+                    <h3>Herman Hall</h3>
+                    <p style="color: #00ff00; font-weight: bold;">Educator, Author, and Founder of DigitalEdge</p>
+                    <p>
+                        With years of experience teaching in schools, colleges, and private sector training programs, I understand what students need to succeed. This platform brings together everything I wish my students had access to: centralized, free, and built specifically for exam success.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="section support-section" id="support">
+            <h2>Supporting DigitalEdge</h2>
+            <p>
+                DigitalEdge is seeking supporters who believe in accessible education. Your support would help:
+            </p>
+            <ul class="benefits-list">
+                <li>🔧 Maintain and improve existing tools</li>
+                <li>📚 Develop new exam simulators and study systems</li>
+                <li>🌍 Expand bilingual and accessibility features</li>
+                <li>💡 Keep everything free for students</li>
+            </ul>
+
+            <div class="support-cta">
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    <strong>Interested in supporting this mission?</strong><br>
+                    If your organization, school, or company benefits from DigitalEdge, consider becoming a supporter.
+                </p>
+                <a href="https://ko-fi.com/hermanhall" target="_blank" rel="noopener" class="cta-button">Become a Supporter</a>
+            </div>
+        </section>
+
+        <!-- What's Coming Next -->
+        <section class="section">
+            <h2>What's Coming Next</h2>
+            <p>We're constantly developing new tools based on student and instructor feedback:</p>
+            <ul class="roadmap-list">
+                <li>Additional certification simulators (Linux+, Cloud+, Server+)</li>
+                <li>Mobile app versions for iOS and Android</li>
+                <li>Collaborative study features and study groups</li>
+                <li>Instructor dashboards for classroom use</li>
+                <li>Performance analytics and progress tracking</li>
+                <li>Expanded language support beyond English/Spanish</li>
+            </ul>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>Q: Is DigitalEdge really free?</h4>
+                <p>A: Yes! All tools are completely free for students and learners. There are no hidden fees, paywalls, or premium tiers.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Who can use DigitalEdge?</h4>
+                <p>A: Anyone preparing for IT certifications—students, career changers, professionals, or anyone looking to expand their technical knowledge.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: How is this funded?</h4>
+                <p>A: Through generous supporters—organizations, schools, and companies who want to keep quality education accessible for all students.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Can instructors use this in their classrooms?</h4>
+                <p>A: Absolutely! That's exactly what it's built for. Feel free to integrate these tools into your curriculum and share with your students.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: How can my organization support DigitalEdge?</h4>
+                <p>A: Contact us about sponsorship opportunities. We offer recognition for supporters and can discuss custom needs for your organization.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Are the practice exams updated regularly?</h4>
+                <p>A: Yes! We continuously update our question banks and content to reflect the latest certification exam objectives and industry standards.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <h2>Contact & Feedback</h2>
+            <div class="contact-info">
+                <p style="margin-bottom: 1rem;">Have suggestions? Found a bug? Want to support the project?</p>
+                <p><a href="https://digitaledge.network/contact" target="_blank" rel="noopener">📧 Contact Us</a></p>
+                <p style="margin-top: 1rem; color: #aaa;">We'd love to hear from you!</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 DigitalEdge Learning Systems. Built by educators, for learners.</p>
+        <p style="margin-top: 0.5rem;">All exam simulators are free and always will be.</p>
+    </footer>
+
+    <script>
+        function scrollToSupport() {
+            document.getElementById('support').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

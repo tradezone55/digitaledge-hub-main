@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analytics Dashboard – DigitalEdge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0f14;--panel:#0e141c;--panel2:#0c1219;--text:#e6eefb;--muted:#a7b4c9;--accent:#39ff14;--brand:#ff4500;}
+    *{box-sizing:border-box} html,body{margin:0;height:100%} body{background:radial-gradient(1200px 800px at 80% -10%, rgba(57,255,20,.08), transparent 60%),radial-gradient(900px 600px at -10% 40%, rgba(255,69,0,.08), transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui;-webkit-font-smoothing:antialiased}
+    .container{max-width:1200px;margin:32px auto;padding:0 24px} h1{font:800 32px Orbitron,Inter,sans-serif;margin:0 0 8px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
+    .title{color:var(--muted);text-transform:uppercase;font-weight:700;font-size:12px;letter-spacing:.6px}
+    .value{font:800 44px Orbitron,Inter;background:linear-gradient(135deg,var(--accent),var(--brand));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:8px 0}
+    .sub{color:#7f8aa3;font-weight:600}
+    .btns{display:flex;gap:10px;margin:16px 0 24px;flex-wrap:wrap}
+    .btn{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:10px 14px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--text);text-decoration:none;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Real-Time Analytics Dashboard</h1>
+    <div class="btns">
+      <a class="btn" href="https://hub.digitaledgeprep.com/" target="_blank">🏠 Open Hub</a>
+      <a class="btn" href="https://hub.digitaledgeprep.com/.netlify/functions/visitorCount" target="_blank">🧪 Test Function</a>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="title">Total Visitors (Global)</div>
+        <div class="value" id="totalVisitors">—</div>
+        <div class="sub">All-time page visits via Hub function</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const FN = 'https://hub.digitaledgeprep.com/.netlify/functions/visitorCount';
+    function refresh(){
+      fetch(FN)
+        .then(r=>r.json())
+        .then(d=>{ document.getElementById('totalVisitors').textContent = (d.value||0).toLocaleString(); })
+        .catch(()=>{ document.getElementById('totalVisitors').textContent='N/A'; });
+    }
+    refresh();
+    setInterval(refresh, 30000);
+  </script>
+</body>
+</html>
