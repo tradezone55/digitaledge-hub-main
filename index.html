@@ -1,5 +1,3 @@
-<!-- Test GitHub workflow. Safe practice edit. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,26 +62,12 @@
       box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
     }
     @keyframes contactPulse {
-      0%, 100% {
-        opacity: 1;
-        box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
-      }
-      50% {
-        opacity: 0.8;
-        box-shadow: 0 0 25px rgba(255, 107, 53, 0.8), 0 0 35px rgba(255, 107, 53, 0.6);
-      }
+      0%, 100% { opacity: 1; box-shadow: 0 0 15px rgba(255, 107, 53, 0.5); }
+      50% { opacity: 0.8; box-shadow: 0 0 25px rgba(255, 107, 53, 0.8), 0 0 35px rgba(255, 107, 53, 0.6); }
     }
     @keyframes pulseButton {
-      0%, 100% {
-        box-shadow: 0 0 12px rgba(255,77,46,0.6), 0 0 22px rgba(57,255,20,0.4);
-        filter: saturate(1);
-        opacity: 1;
-      }
-      50% {
-        box-shadow: 0 0 22px rgba(57,255,20,0.85), 0 0 40px rgba(255,77,46,0.65);
-        filter: saturate(1.2);
-        opacity: 0.9;
-      }
+      0%, 100% { box-shadow: 0 0 12px rgba(255,77,46,0.6), 0 0 22px rgba(57,255,20,0.4); filter: saturate(1); opacity: 1; }
+      50% { box-shadow: 0 0 22px rgba(57,255,20,0.85), 0 0 40px rgba(255,77,46,0.65); filter: saturate(1.2); opacity: 0.9; }
     }
     h1{text-align:center;margin:34px 12px 4px;font-size:clamp(28px,5vw,46px);color:var(--accent);text-shadow:0 0 16px var(--accent),0 0 30px rgba(255,69,0,.45)}
     .subtitle{text-align:center;color:var(--muted);margin-bottom:24px}
@@ -100,71 +84,21 @@
     .soon{opacity:.6}
     .soon .launch{pointer-events:none;opacity:.8;border-style:dashed}
     footer{text-align:center;color:#0f0;text-shadow:0 0 10px #0f0;padding:30px 0 50px}
-    /* pulses for badges/buttons */
     @keyframes pulseFade{0%{text-shadow:0 0 8px var(--accent);opacity:1;}50%{text-shadow:0 0 18px var(--accent);opacity:.65;}100%{text-shadow:0 0 8px var(--accent);opacity:1;}}
     .soon .launch{animation:pulseFade 2.5s infinite ease-in-out;}
     .badge.pulse{animation:pulseFade 2.5s infinite ease-in-out;}
-    /* gray-out icons */
     .soon .icon{filter:grayscale(100%) brightness(0.6);opacity:.6;transition:filter .25s ease,opacity .25s ease;}
     .card.soon:hover .icon{filter:grayscale(0%) brightness(1);opacity:.95;}
-    /* Tooltip Styling */
     .support-wrapper{position:relative;display:inline-block;}
     .tooltip{visibility:hidden;background:rgba(0,0,0,0.9);color:var(--fg);text-shadow:0 0 8px var(--accent);text-align:center;padding:6px 10px;border-radius:8px;position:absolute;top:125%;left:50%;transform:translateX(-50%);opacity:0;transition:opacity .3s;font-size:13px;white-space:nowrap;border:1px solid var(--accent);box-shadow:0 0 12px rgba(255,69,0,.35);}
     .support-wrapper:hover .tooltip{visibility:visible;opacity:1;}
-  
-    /* Python LIVE card overrides: neon red/orange frame + top-right language badge */
-    .card.de-python{
-      border: 2px solid var(--accent);
-      box-shadow: 0 0 18px rgba(255,69,0,.55), 0 0 6px rgba(255,69,0,.35) inset;
-      animation: pulseGlowRed 3.2s ease-in-out infinite;
-    }
-    @keyframes pulseGlowRed{
-      0%,100%{ box-shadow: 0 0 14px rgba(255,69,0,.45), 0 0 4px rgba(255,69,0,.25) inset; }
-      50%{ box-shadow: 0 0 26px rgba(255,69,0,.85), 0 0 10px rgba(255,69,0,.45) inset; }
-    }
-    .badge.badge-lang{
-      position:absolute;
-      top: 38px;
-      right: 10px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(182,255,182,0.95));
-      color:#000;
-      font-weight:800;
-      box-shadow: 0 0 10px rgba(255,69,0,.45), 0 0 12px rgba(57,255,20,.35);
-    }
-
-    /* Default (not glowing) */
-    .card.de-python {
-      border-color: rgba(255,69,0,.35);
-      box-shadow: 0 0 8px rgba(255,69,0,.25);
-      animation: none;
-    }
-
-    /* Hover Glow Activation */
-    .card.de-python:hover {
-      border-color: var(--accent);
-      box-shadow: 
-        0 0 18px rgba(255,69,0,.65), 
-        0 0 9px rgba(255,69,0,.45) inset;
-      animation: pulseGlowRed 3s ease-in-out infinite;
-    }
+    .card.de-python{border: 2px solid var(--accent);box-shadow: 0 0 18px rgba(255,69,0,.55), 0 0 6px rgba(255,69,0,.35) inset;animation: pulseGlowRed 3.2s ease-in-out infinite;}
+    @keyframes pulseGlowRed{0%,100%{ box-shadow: 0 0 14px rgba(255,69,0,.45), 0 0 4px rgba(255,69,0,.25) inset; }50%{ box-shadow: 0 0 26px rgba(255,69,0,.85), 0 0 10px rgba(255,69,0,.45) inset; }}
+    .badge.badge-lang{position:absolute;top: 38px;right: 10px;background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(182,255,182,0.95));color:#000;font-weight:800;box-shadow: 0 0 10px rgba(255,69,0,.45), 0 0 12px rgba(57,255,20,.35);}
+    .card.de-python:hover {border-color: var(--accent);box-shadow: 0 0 18px rgba(255,69,0,.65), 0 0 9px rgba(255,69,0,.45) inset;animation: pulseGlowRed 3s ease-in-out infinite;}
   </style>
 </head>
 <body>
-<!-- Video Training Banner -->
-<div style="
-  background: #111;
-  padding: 20px;
-  text-align: center;
-  font-size: 1.6em;
-  color: #00ff87;
-  border: 2px solid #ff4400;
-  margin: 25px 0;
-  box-shadow: 0 0 12px #00ff87, 0 0 20px #ff4400;
-  border-radius: 10px;
-">
-  🔥 Video Training Coming Soon — Stay Tuned! 🔥
-</div>
-
   <header class="nav">
     <div class="brand" aria-label="DigitalEdge">
       <svg class="logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M12 2l3.5 6h6.5l-5.2 3.8 2 6.2L12 16l-6.8 2.9 2-6.2L2 8h6.5L12 2z"/></svg>
@@ -174,7 +108,6 @@
       <a href="#systems">Systems</a>
       <a href="about.html">About</a>
       <div class="support-wrapper">
-        <!-- Updated: Support button now goes to the Support Console page -->
         <a class="support" href="support.html" rel="noopener">Support</a>
         <span class="tooltip">Support DigitalEdge</span>
       </div>
@@ -213,15 +146,12 @@
 
       <article class="card de-python" aria-label="AWS Solutions Architect – Associate">
         <span class="badge pulse">Live</span>
-        <!-- AWS Cloud Icon -->
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" d="M19 18H6a4 4 0 010-8 5.5 5.5 0 0110.71-1.71A4.5 4.5 0 1119 18zm-8.5-9A3.5 3.5 0 007 12.5a1 1 0 01-1 1 2 2 0 000 4h13a2.5 2.5 0 00.2-5A1 1 0 0119 11a3.5 3.5 0 00-3.5-3.5z"/>
         </svg>
         <h2>AWS Solutions Architect – Associate</h2>
         <p><span style="color:#00ff87;font-weight:600;">Bilingual</span> • Domain-Based Practice • Secure • Resilient • High-Performing • Cost-Optimized</p>
-        <a class="launch" href="https://aws-saa.digitaledgeprep.com" target="_blank" rel="noopener">
-          <span>Launch</span>
-        </a>
+        <a class="launch" href="https://aws-saa.digitaledgeprep.com" target="_blank" rel="noopener"><span>Launch</span></a>
       </article>
 
       <article class="card" aria-label="CCNA Exam Simulator">
@@ -231,22 +161,17 @@
         </svg>
         <h2>CCNA Exam Simulator</h2>
         <p>Full Exam • <span style="color:#00ff87;font-weight:600;">Bilingual</span> • Review &amp; History — Updated v1.3 with recap memory.</p>
-        <a class="launch" href="https://ccna.digitaledgeprep.com" target="_blank" rel="noopener">
-          <span>Launch</span>
-        </a>
+        <a class="launch" href="https://ccna.digitaledgeprep.com" target="_blank" rel="noopener"><span>Launch</span></a>
       </article>
 
       <article class="card" aria-label="OSI Model Flipcards">
         <span class="badge pulse">Live</span>
-        <!-- Flipcard/Layers Icon -->
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" d="M3 3h18v4H3zM3 9h18v4H3zM3 15h18v6H3z"/>
         </svg>
         <h2>OSI Model Flipcards</h2>
         <p>Interactive <span style="color:#00ff87;font-weight:600;">Bilingual</span> study tool • Network+ &amp; CCNA focused • Master the 7 layers with flashcards</p>
-        <a class="launch" href="https://osi-flipcard.digitaledgeprep.com" target="_blank" rel="noopener">
-          <span>Launch</span>
-        </a>
+        <a class="launch" href="https://osi-flipcard.digitaledgeprep.com" target="_blank" rel="noopener"><span>Launch</span></a>
       </article>
 
       <article class="card" aria-label="Security+ Exam Simulator">
@@ -256,31 +181,22 @@
         </svg>
         <h2>Security+ (SY0-701) Exam Simulator</h2>
         <p>Full Exam • <span style="color:#00ff87;font-weight:600;">Bilingual</span> • Domain Practice • Review Incorrect — Auto-Timer with Neon UI</p>
-        <a class="launch" href="https://securityplus.digitaledgeprep.com" target="_blank" rel="noopener">
-          <span>Launch</span>
-        </a>
+        <a class="launch" href="https://securityplus.digitaledgeprep.com" target="_blank" rel="noopener"><span>Launch</span></a>
       </article>
 
       <article class="card de-python" aria-label="Python Exam Simulator">
         <span class="badge pulse">Live</span>
-        <!-- Small Python logo (inline SVG) -->
         <svg class="icon" viewBox="0 0 256 255" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="pyA" x1="12.959" x2="150.198" y1="7.393" y2="136.23" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#3878BF"/><stop offset="1" stop-color="#3776AB"/>
-            </linearGradient>
-            <linearGradient id="pyB" x1="95.808" x2="243.783" y1="118.617" y2="246.166" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#FFE052"/><stop offset="1" stop-color="#FFC331"/>
-            </linearGradient>
+            <linearGradient id="pyA" x1="12.959" x2="150.198" y1="7.393" y2="136.23" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3878BF"/><stop offset="1" stop-color="#3776AB"/></linearGradient>
+            <linearGradient id="pyB" x1="95.808" x2="243.783" y1="118.617" y2="246.166" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFE052"/><stop offset="1" stop-color="#FFC331"/></linearGradient>
           </defs>
           <path fill="url(#pyA)" d="M126.916 0c-62.87 0-59.02 27.267-59.02 27.267l.07 28.237h60.083v8.486H40.235S0 60.98 0 124.3c0 63.32 35.078 61.14 35.078 61.14h20.93v-29.13s-1.128-35.078 34.386-35.078h59.232s33.258.537 33.258-32.137V32.666S186.33 0 126.916 0Zm-32.78 18.942a10.33 10.33 0 1 1 0 20.661 10.33 10.33 0 0 1 0-20.661Z"/>
           <path fill="url(#pyB)" d="M128.71 254.893c62.87 0 59.02-27.268 59.02-27.268l-.07-28.236h-60.083v-8.486h87.834s40.235 2.011 40.235-61.308c0-63.32-35.078-61.14-35.078-61.14h-20.93v29.13s1.128 35.078-34.386 35.078h-59.232s-33.258-.537-33.258 32.137v56.428s-2.857 32.666 56.557 32.666Zm32.78-18.943a10.33 10.33 0 1 1 0-20.66 10.33 10.33 0 0 1 0 20.66Z"/>
         </svg>
         <h2>Python Exam Simulator</h2>
         <p><span style="color:#00ff87;font-weight:600;">Bilingual</span></p>
-        <a class="launch" href="https://python.digitaledgeprep.com" target="_blank" rel="noopener">
-          <span>Launch</span>
-        </a>
+        <a class="launch" href="https://python.digitaledgeprep.com" target="_blank" rel="noopener"><span>Launch</span></a>
       </article>
 
       <article class="card" aria-label="A+ Quiz System">
@@ -302,5 +218,61 @@
   </main>
 
   <footer>© 2025 Herman Hall — DigitalEdge</footer>
+
+  <!-- 
+    ⚡ DIGITALEDGE ANALYTICS TRACKING
+    This script finds the user's City/State/Country and sends it to the Google Sheet.
+  -->
+  <script>
+    // 1. VARIABLE TO HOLD LOCATION
+    let userLocation = { city: 'Unknown', region: 'Unknown', country: 'Unknown' };
+
+    // 2. FETCH LOCATION ON PAGE LOAD
+    async function getGeo() {
+      try {
+        const r = await fetch('https://ipapi.co/json/');
+        const d = await r.json();
+        userLocation = {
+          city: d.city || 'Unknown',
+          region: d.region || 'Unknown',
+          country: d.country_name || 'Unknown'
+        };
+        console.log("📍 User Location Found:", userLocation);
+      } catch(e) { 
+        console.warn("Could not fetch location:", e); 
+      }
+    }
+    getGeo(); // Run immediately
+
+    // 3. YOUR GOOGLE SCRIPT URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYwwsWrTdCegf-G_05may_SvXwCasPmzCAn0n9Iq3qGj6FXOyV-nIBzrySSstsV1xg/exec';
+
+    // 4. ATTACH LISTENERS TO LAUNCH BUTTONS
+    document.querySelectorAll('.launch').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Find which exam they clicked
+        const card = btn.closest('.card');
+        const examName = card ? card.querySelector('h2').innerText : 'Unknown Exam';
+
+        // Send the data
+        sendDataToSheet(examName, userLocation);
+      });
+    });
+
+    // 5. FUNCTION TO SEND DATA
+    function sendDataToSheet(exam, loc) {
+      if (GOOGLE_SCRIPT_URL.includes('PASTE_YOUR')) {
+        console.log("⚠️ Tracking skipped: No Google Script URL provided.");
+        return;
+      }
+
+      // We use 'no-cors' mode so the browser doesn't block the request
+      const url = `${GOOGLE_SCRIPT_URL}?exam=${encodeURIComponent(exam)}&city=${encodeURIComponent(loc.city)}&region=${encodeURIComponent(loc.region)}&country=${encodeURIComponent(loc.country)}`;
+      
+      fetch(url, { mode: 'no-cors' })
+        .then(() => console.log(`🚀 Logged visit: ${exam} from ${loc.city}`))
+        .catch(err => console.error("Tracking Error:", err));
+    }
+  </script>
 </body>
 </html>
