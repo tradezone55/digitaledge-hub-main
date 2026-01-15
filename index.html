@@ -113,6 +113,162 @@
       </div>
     </nav>
   </header>
+  <!-- Global Visitor Counter -->
+<div class="visitor-counter">
+  <div class="counter-icon">🌍</div>
+  <div class="counter-content">
+    <div class="counter-label">Join Our Global Community</div>
+    <div class="counter-number" id="totalVisitors">
+      <span class="loading">●●●</span>
+    </div>
+    <div class="counter-sublabel">Active Learners Worldwide</div>
+  </div>
+</div>
+
+<style>
+.visitor-counter {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 40px;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.08) 0%, rgba(255, 128, 0, 0.05) 100%);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 16px;
+  margin: 32px auto;
+  max-width: 600px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.counter-icon {
+  font-size: 56px;
+  animation: rotate 30s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+}
+
+.counter-content {
+  flex: 1;
+  text-align: left;
+}
+
+.counter-label {
+  color: rgba(0, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.counter-number {
+  font-size: 52px;
+  font-weight: 700;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.counter-sublabel {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.loading {
+  color: rgba(0, 255, 255, 0.5);
+  font-size: 20px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+    border-color: rgba(0, 255, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+    border-color: rgba(0, 255, 255, 0.5);
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes countUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.9);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+.counter-number.loaded {
+  animation: countUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (max-width: 768px) {
+  .visitor-counter {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .counter-content {
+    text-align: center;
+  }
+  
+  .counter-number {
+    font-size: 42px;
+  }
+  
+  .counter-icon {
+    font-size: 48px;
+  }
+}
+</style>
+
+<script>
+const VISITOR_API_URL = 'https://script.google.com/macros/s/AKfycbywTtj1F7V_fdU6Lui3KBbKn1HEOecB8YMSJrlK4F7wjxWN8fggpikGainA6OJ-Nyzv/exec?action=getTotalCount';
+
+async function updateVisitorCount() {
+  try {
+    const response = await fetch(VISITOR_API_URL);
+    const data = await response.json();
+    
+    if (data.status === 'success' && data.totalVisits) {
+      const counterElement = document.getElementById('totalVisitors');
+      counterElement.textContent = data.totalVisits.toLocaleString() + '+';
+      counterElement.classList.add('loaded');
+      
+      setTimeout(updateVisitorCount, 300000);
+    } else {
+      throw new Error('Invalid response');
+    }
+  } catch (error) {
+    console.error('Error fetching visitor count:', error);
+    document.getElementById('totalVisitors').textContent = '1,200+';
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', updateVisitorCount);
+} else {
+  updateVisitorCount();
+}
+</script>
   <div class="contact-info">Contact: info@digitaledgeprep.com</div>
 
   <main>
