@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canvas Gamma Embed Template</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    /* ─── TEMPLATE WRAPPER ─── */
+    .gamma-embed-block {
+      background: #ffffff;
+      border: 1px solid #dde3ea;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    /* ─── TOPIC LABEL BANNER ─── */
+    .topic-banner {
+      background: #1a1a2e;
+      color: #00e5ff;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .topic-banner .dot {
+      width: 8px;
+      height: 8px;
+      background: #00e5ff;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ─── IFRAME CONTAINER ─── */
+    .iframe-wrapper {
+      width: 100%;
+      position: relative;
+      background: #000;
+    }
+
+    .iframe-wrapper iframe {
+      width: 100%;
+      display: block;
+      border: none;
+    }
+
+    /* ─── FOOTER BAR ─── */
+    .embed-footer {
+      background: #f8f9fb;
+      border-top: 1px solid #e0e5ec;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .embed-footer .label {
+      font-size: 13px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .embed-footer .label span.icon {
+      font-size: 16px;
+    }
+
+    /* ─── CTA BUTTON ─── */
+    .btn-view {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 3px 10px rgba(0,114,255,0.3);
+    }
+
+    .btn-view:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0,114,255,0.4);
+    }
+
+    .btn-pptx {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #0072ff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 2px solid #0072ff;
+      letter-spacing: 0.5px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-pptx:hover {
+      background: #0072ff;
+      color: #fff;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║   DIGITALEDGE — CANVAS GAMMA EMBED TEMPLATE                     ║
+  ║   Instructions:                                                  ║
+  ║   1. Replace GAMMA_EMBED_URL with your Gamma embed src URL       ║
+  ║   2. Replace GAMMA_PUBLIC_URL with the shareable Gamma link      ║
+  ║   3. Replace PPTX_DOWNLOAD_URL with your Google Drive link       ║
+  ║   4. Update TOPIC_LABEL to match your module topic               ║
+  ║   5. Adjust iframe height: 420px (slides) or 600px (interactive) ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<div class="gamma-embed-block">
+
+  <!-- TOPIC BANNER — change label text as needed -->
+  <div class="topic-banner">
+    <span class="dot"></span>
+    Subnetting Made Easy
+  </div>
+
+  <!-- IFRAME — swap height: 420 for slides, 600 for interactive tools -->
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://gamma.app/embed/xlwk8ui5zzpi4f8"
+      style="width: 700px; max-width: 100%; height: 450px"
+      allow="fullscreen"
+      loading="lazy"
+      title="Subnetting Made Easy">
+    </iframe>
+  </div>
+
+  <!-- FOOTER WITH BUTTONS -->
+  <div class="embed-footer">
+    <div class="label">
+      <span class="icon">📡</span>
+      DigitalEdge Learning Systems &nbsp;|&nbsp; CCNA &amp; Network+ Prep
+    </div>
+    <div class="btn-group">
+      <a class="btn-pptx" href="https://docs.google.com/presentation/d/1UcQ4u6kvARkJ1PNhcxi2vr8N9jXh_Jlh/edit?usp=sharing&ouid=101051386638249486065&rtpof=true&sd=true" target="_blank">
+        ⬇ Download PPTX
+      </a>
+      <a class="btn-view" href="https://gamma.app/docs/Subnetting-Made-Easy-xlwk8ui5zzpi4f8?mode=present#card-z2cms6y2znhg56u" target="_blank">
+        🚀 View Full Presentation
+      </a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
