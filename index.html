@@ -4,209 +4,135 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DigitalEdge Systems Hub</title>
-  <meta name="description" content="Centralized menu of all DigitalEdge learning systems: A+ Certification, A+ Quiz, Network+ Mastery, VLSM Calculator, Python PCEP, and more." />
+  <meta name="description" content="Centralized menu of all DigitalEdge learning systems: Python PCEP, A+ Certification, A+ Quiz, Network+ Mastery, VLSM Calculator, and more." />
   <meta property="og:title" content="DigitalEdge Systems Hub" />
-  <meta property="og:description" content="Browse and launch all DigitalEdge systems in one place." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://digitaledgeprep.com/og-hub.png" />
-  <meta name="theme-color" content="#ff4500" />
+  <meta property="og:description" content="Launch any DigitalEdge learning system from one place." />
+  <meta name="theme-color" content="#0F172A" />
   <style>
-    :root{--bg:#000;--fg:#0aff0a;--accent:#ff4500;--muted:#7a7a7a;--card:#0a0a0a;}
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 50% -10%,rgba(255,69,0,.12),transparent 60%),radial-gradient(700px 400px at 120% 20%,rgba(10,255,10,.08),transparent 60%),var(--bg);color:var(--fg)}
-    .nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);border-bottom:1px solid rgba(10,255,10,.2)}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
-    .brand .logo{width:26px;height:26px}
-    .brand .title{color:var(--accent);text-shadow:0 0 12px var(--accent)}
-    .navlinks{display:flex;gap:16px;align-items:center}
-    .navlinks a{color:var(--fg);text-decoration:none;opacity:.9}
-    .navlinks a:hover{opacity:1;text-shadow:0 0 8px var(--fg)}
-    .support{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:2px solid var(--accent);background:radial-gradient(circle at 30% 30%, rgba(255,77,46,0.25), rgba(0,0,0,0.7));color:#fff;text-decoration:none;font-weight:700;letter-spacing:.3px;box-shadow:0 0 12px rgba(255,77,46,.6),0 0 22px rgba(57,255,20,.4);transition:all .25s ease-in-out;animation:pulseButton 2.8s ease-in-out infinite}
-    .support:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 20px rgba(57,255,20,.9),0 0 36px rgba(255,77,46,.7);background:radial-gradient(circle at 70% 70%, rgba(57,255,20,0.30), rgba(0,0,0,0.55));border-color:var(--fg);color:#fff}
-    .contact-info{position:fixed;top:80px;right:20px;background:rgba(0,0,0,.85);color:#0aff0a;padding:12px 20px;border-radius:8px;border:2px solid #ff6b35;font-family:'Courier New',monospace;font-size:14px;font-weight:600;animation:contactPulse 2s ease-in-out infinite;z-index:1000;box-shadow:0 0 15px rgba(255,107,53,.5)}
-    @keyframes contactPulse{0%,100%{opacity:1;box-shadow:0 0 15px rgba(255,107,53,.5)}50%{opacity:.8;box-shadow:0 0 25px rgba(255,107,53,.8),0 0 35px rgba(255,107,53,.6)}}
-    @keyframes pulseButton{0%,100%{box-shadow:0 0 12px rgba(255,77,46,.6),0 0 22px rgba(57,255,20,.4);filter:saturate(1);opacity:1}50%{box-shadow:0 0 22px rgba(57,255,20,.85),0 0 40px rgba(255,77,46,.65);filter:saturate(1.2);opacity:.9}}
-    h1{text-align:center;margin:34px 12px 4px;font-size:clamp(28px,5vw,46px);color:var(--accent);text-shadow:0 0 16px var(--accent),0 0 30px rgba(255,69,0,.45)}
-    .subtitle{text-align:center;color:var(--muted);margin-bottom:24px}
-    .menu{width:min(1200px,94%);margin:0 auto 40px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .card{position:relative;background:linear-gradient(180deg,rgba(0,0,0,.86),rgba(0,0,0,.78));border:1px solid rgba(10,255,10,.35);border-radius:16px;padding:22px;overflow:hidden;transition:transform .2s ease,box-shadow .25s ease,border-color .2s ease;box-shadow:0 0 0 rgba(10,255,10,0);animation:pulseGlow 3.5s ease-in-out infinite}
-    .card:hover{transform:translateY(-4px);box-shadow:0 0 20px rgba(10,255,10,.35);border-color:var(--fg)}
-    @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 rgba(10,255,10,0)}50%{box-shadow:0 0 16px rgba(10,255,10,.22)}}
-    .card h2{margin:6px 0 6px;color:#fff;font-size:22px}
-    .card p{margin:0 0 18px;color:var(--muted)}
-    .launch{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--accent);font-weight:700;border:1px solid var(--accent);padding:10px 14px;border-radius:12px;transition:all .2s ease;background:linear-gradient(180deg,rgba(255,69,0,.1),rgba(255,69,0,.04))}
-    .launch:hover{color:var(--fg);border-color:var(--fg);box-shadow:0 0 12px rgba(10,255,10,.35)}
-    .upgrade-link{display:block;margin-top:10px;text-align:center;font-size:12px;color:#00ff9d;text-decoration:none;letter-spacing:.08em;font-weight:700;text-shadow:0 0 8px rgba(0,255,157,.45);transition:all .2s ease}
-    .upgrade-link:hover{color:#fff;text-shadow:0 0 12px rgba(0,255,157,.9)}
-    .icon{width:44px;height:44px;filter:drop-shadow(0 0 10px rgba(10,255,10,.3))}
-    .badge{position:absolute;top:10px;right:10px;padding:4px 8px;border-radius:10px;font-size:12px;font-weight:700;color:#000;background:linear-gradient(180deg,#b6ffb6,#3cff3c);box-shadow:0 0 10px rgba(60,255,60,.45)}
-    .soon{opacity:.6}
-    .soon .launch{pointer-events:none;opacity:.8;border-style:dashed}
-    footer{text-align:center;color:#0f0;text-shadow:0 0 10px #0f0;padding:30px 0 50px}
-    @keyframes pulseFade{0%{text-shadow:0 0 8px var(--accent);opacity:1}50%{text-shadow:0 0 18px var(--accent);opacity:.65}100%{text-shadow:0 0 8px var(--accent);opacity:1}}
-    .soon .launch{animation:pulseFade 2.5s infinite ease-in-out}
-    .badge.pulse{animation:pulseFade 2.5s infinite ease-in-out}
-    .soon .icon{filter:grayscale(100%) brightness(.6);opacity:.6;transition:filter .25s ease,opacity .25s ease}
-    .card.soon:hover .icon{filter:grayscale(0%) brightness(1);opacity:.95}
-    .support-wrapper{position:relative;display:inline-block}
-    .tooltip{visibility:hidden;background:rgba(0,0,0,.9);color:var(--fg);text-shadow:0 0 8px var(--accent);text-align:center;padding:6px 10px;border-radius:8px;position:absolute;top:125%;left:50%;transform:translateX(-50%);opacity:0;transition:opacity .3s;font-size:13px;white-space:nowrap;border:1px solid var(--accent);box-shadow:0 0 12px rgba(255,69,0,.35)}
-    .support-wrapper:hover .tooltip{visibility:visible;opacity:1}
-    .card.de-python{border:2px solid var(--accent);box-shadow:0 0 18px rgba(255,69,0,.55),0 0 6px rgba(255,69,0,.35) inset;animation:pulseGlowRed 3.2s ease-in-out infinite}
-    @keyframes pulseGlowRed{0%,100%{box-shadow:0 0 14px rgba(255,69,0,.45),0 0 4px rgba(255,69,0,.25) inset}50%{box-shadow:0 0 26px rgba(255,69,0,.85),0 0 10px rgba(255,69,0,.45) inset}}
-    .badge.badge-lang{position:absolute;top:38px;right:10px;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(182,255,182,0.95));color:#000;font-weight:800;box-shadow:0 0 10px rgba(255,69,0,.45),0 0 12px rgba(57,255,20,.35)}
-    .card.de-python:hover{border-color:var(--accent);box-shadow:0 0 18px rgba(255,69,0,.65),0 0 9px rgba(255,69,0,.45) inset;animation:pulseGlowRed 3s ease-in-out infinite}
-
-    /* Visitor counter */
-    .visitor-counter{width:min(1200px,94%);margin:24px auto 8px;display:flex;align-items:center;gap:24px;padding:24px;background:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.7));border:1px solid rgba(0,255,255,.3);border-radius:16px;animation:pulseGlowCyan 3.5s ease-in-out infinite}
-    @keyframes pulseGlowCyan{0%,100%{box-shadow:0 0 30px rgba(0,255,255,.15);border-color:rgba(0,255,255,.3)}50%{box-shadow:0 0 40px rgba(0,255,255,.25);border-color:rgba(0,255,255,.5)}}
-    .counter-icon{font-size:56px;animation:rotate 18s linear infinite}
-    @keyframes rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-    .counter-content{flex:1}
-    .counter-content h3{margin:0 0 6px;color:#fff;font-size:20px}
-    .counter-number{font-size:48px;font-weight:800;color:#0ff;text-shadow:0 0 14px rgba(0,255,255,.7);letter-spacing:.05em}
-    .counter-content p{margin:6px 0 0;color:var(--muted)}
-    .blink{display:inline-block;color:#0aff0a;animation:blink 1.4s ease-in-out infinite;margin-right:6px}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-    @keyframes countUp{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
-    .counter-number.loaded{animation:countUp .8s cubic-bezier(.34,1.56,.64,1)}
-    @media (max-width:768px){
-      .visitor-counter{flex-direction:column;text-align:center;padding:24px}
-      .counter-content{text-align:center}
-      .counter-number{font-size:42px}
-      .counter-icon{font-size:48px}
-      .contact-info{display:none}
+    :root{
+      --bg:#0a0e1a;
+      --panel:#111827;
+      --panel-2:#0f172a;
+      --text:#e6e9ef;
+      --muted:#9aa3b2;
+      --border:rgba(255,255,255,0.08);
+      --cyan:#22d3ee;
+      --purple:#a78bfa;
+      --green:#22c55e;
+      --yellow:#facc15;
+      --red:#ef4444;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
+    body{
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+      background-size:40px 40px;
+      min-height:100vh;
+    }
+    .wrap{max-width:1200px;margin:0 auto;padding:48px 24px 80px}
+    header{text-align:center;margin-bottom:48px}
+    .logo{
+      font-size:14px;letter-spacing:0.3em;font-weight:700;
+      background:linear-gradient(90deg,var(--cyan),var(--purple));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      margin-bottom:12px;
+    }
+    h1{font-size:clamp(28px,4vw,44px);margin:0 0 12px;font-weight:800;letter-spacing:-0.02em}
+    .sub{color:var(--muted);font-size:16px;max-width:640px;margin:0 auto}
+    .grid{
+      display:grid;gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      margin-top:40px;
+    }
+    .card{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--border);border-radius:14px;padding:22px;
+      display:flex;flex-direction:column;gap:14px;
+      transition:transform .15s ease,border-color .15s ease;
+    }
+    .card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.18)}
+    .row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+    .badge{
+      font-size:10px;letter-spacing:0.18em;font-weight:700;padding:4px 8px;border-radius:999px;
+      background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);
+      text-transform:uppercase;
+    }
+    .badge.live{color:var(--green);border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.08)}
+    .badge.python{color:var(--green);border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.08)}
+    .badge.aplus{color:var(--cyan);border-color:rgba(34,211,238,0.3);background:rgba(34,211,238,0.08)}
+    .badge.netplus{color:var(--purple);border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.08)}
+    .badge.tool{color:var(--yellow);border-color:rgba(250,204,21,0.3);background:rgba(250,204,21,0.08)}
+    .title{font-size:18px;font-weight:700;margin:0}
+    .desc{color:var(--muted);font-size:14px;margin:0;line-height:1.5;flex:1}
+    .actions{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:6px;
+      padding:10px 14px;border-radius:10px;font-weight:700;font-size:13px;
+      text-decoration:none;letter-spacing:0.04em;cursor:pointer;border:1px solid transparent;
+      transition:transform .1s ease,opacity .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--yellow);color:#1a1300}
+    .btn-pro{background:linear-gradient(90deg,var(--cyan),var(--purple));color:#0a0e1a}
+    .btn-ghost{background:transparent;border-color:var(--border);color:var(--text)}
+    footer{text-align:center;color:var(--muted);font-size:12px;margin-top:64px}
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo">DIGITALEDGE • SYSTEMS HUB</div>
+      <h1>Launch a learning system</h1>
+      <p class="sub">Pick a certification track or tool. Free versions launch instantly — Pro versions unlock full exam simulation and adaptive prep.</p>
+    </header>
 
-  <nav class="nav">
-    <div class="brand">
-      <span class="logo">⚡</span>
-      <span class="title">DigitalEdge</span>
-    </div>
-    <div class="navlinks">
-      <a href="#systems">Systems</a>
-      <a href="about.html">About</a>
-      <div class="support-wrapper">
-        <a class="support" href="support.html">💚 Support</a>
-        <span class="tooltip">Support DigitalEdge</span>
-      </div>
-    </div>
-  </nav>
+    <section class="grid">
 
-  <div class="contact-info">Contact: info@digitaledgeprep.com</div>
+      <!-- PYTHON PCEP -->
+      <article class="card">
+        <div class="row">
+          <span class="badge python">Python PCEP</span>
+          <span class="badge live">Live</span>
+        </div>
+        <h2 class="title">Python Exam Simulator</h2>
+        <p class="desc">Practice for the PCEP-30-02 exam. Free version includes core practice questions. Pro adds 350+ questions, real CPython in your browser, timed mock exams, and bilingual EN/ES.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://free.python.digitaledgeprep.com" target="_blank" rel="noopener">Launch Free →</a>
+          <a class="btn btn-pro" href="https://python.digitaledgeprep.com/pricing" target="_blank" rel="noopener">Upgrade to Pro →</a>
+        </div>
+      </article>
 
-  <h1>⚡ DigitalEdge Learning Systems</h1>
-  <p class="subtitle">Launch A+, Network+, VLSM, Python PCEP, and more — all from one hub.</p>
+      <!-- A+ QUIZ -->
+      <article class="card">
+        <div class="row">
+          <span class="badge aplus">CompTIA A+</span>
+          <span class="badge live">Live</span>
+        </div>
+        <h2 class="title">A+ Quiz System</h2>
+        <p class="desc">Test your hardware and software knowledge with quick-fire A+ practice questions.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Launch →</a>
+        </div>
+      </article>
 
-  <section class="visitor-counter" aria-label="Global community">
-    <div class="counter-icon">🌍</div>
-    <div class="counter-content">
-      <h3>Join Our Global Community</h3>
-      <div class="counter-number loaded"><span class="blink">●●●</span></div>
-      <p>Active Learners Worldwide</p>
-    </div>
-  </section>
+      <!-- VLSM CALCULATOR -->
+      <article class="card">
+        <div class="row">
+          <span class="badge tool">Tool</span>
+          <span class="badge live">Live</span>
+        </div>
+        <h2 class="title">VLSM Calculator</h2>
+        <p class="desc">Visualize and calculate subnetting for any network. Great companion for Network+ and CCNA prep.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Launch →</a>
+        </div>
+      </article>
 
-  <main id="systems" class="menu">
+    </section>
 
-    <!-- A+ Certification -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">🖥️</div>
-      <h2>A+ Certification System</h2>
-      <p>Master A+ with real exam practice • Bilingual • timed, scored, and explained.</p>
-      <a class="launch" href="https://aplus.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- Network+ -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">🌐</div>
-      <h2>Network+ Mastery</h2>
-      <p>Bilingual • Interactive Network+ preparation system.</p>
-      <a class="launch" href="https://netplus.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- AWS Cloud Practitioner -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">☁️</div>
-      <h2>AWS Cloud Practitioner — Exam Simulator</h2>
-      <p>Full Exam • Bilingual • Domain Practice • Review Incorrect — Auto-Timer with Neon UI</p>
-      <a class="launch" href="https://aws-cp.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- AWS SAA -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">🏛️</div>
-      <h2>AWS Solutions Architect – Associate</h2>
-      <p>Bilingual • Domain-Based Practice • Secure • Resilient • High-Performing • Cost-Optimized</p>
-      <a class="launch" href="https://aws-saa.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- CCNA -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">📡</div>
-      <h2>CCNA Exam Simulator</h2>
-      <p>Full Exam • Bilingual • Review &amp; History — Updated v1.3 with recap memory.</p>
-      <a class="launch" href="https://ccna.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- OSI Flipcards -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">🃏</div>
-      <h2>OSI Model Flipcards</h2>
-      <p>Interactive bilingual study tool • Network+ &amp; CCNA focused • Master the 7 layers with flashcards</p>
-      <a class="launch" href="https://osi.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- Security+ -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">🛡️</div>
-      <h2>Security+ (SY0-701) Exam Simulator</h2>
-      <p>Full Exam • Bilingual • Domain Practice • Review Incorrect — Auto-Timer with Neon UI</p>
-      <a class="launch" href="https://secplus.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- PYTHON PCEP — free first, upsell to Pro -->
-    <article class="card de-python">
-      <span class="badge">Live</span>
-      <span class="badge badge-lang">Bilingual</span>
-      <div class="icon">🐍</div>
-      <h2>Python Exam Simulator</h2>
-      <p>Free interactive Python practice — try lessons, quizzes, and a sample exam in your browser. Upgrade anytime for the full PCEP-30-02 simulator.</p>
-      <a class="launch" href="https://python.digitaledgeprep.com" target="_blank" rel="noopener">Launch Free →</a>
-      <a class="upgrade-link" href="https://python.digitaledgeprep.com/pricing" target="_blank" rel="noopener">UPGRADE TO PRO →</a>
-    </article>
-
-    <!-- A+ Quiz -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">❓</div>
-      <h2>A+ Quiz System</h2>
-      <p>Test your hardware and software knowledge.</p>
-      <a class="launch" href="https://aplus-quiz.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-    <!-- VLSM -->
-    <article class="card">
-      <span class="badge">Live</span>
-      <div class="icon">🧮</div>
-      <h2>VLSM Calculator</h2>
-      <p>Visualize and calculate subnetting for any network.</p>
-      <a class="launch" href="https://vlsm.digitaledgeprep.com" target="_blank" rel="noopener">Launch →</a>
-    </article>
-
-  </main>
-
-  <footer>© 2025 Herman Hall — DigitalEdge</footer>
-
+    <footer>© 2026 Herman Hall — DigitalEdge Pro</footer>
+  </div>
 </body>
 </html>
