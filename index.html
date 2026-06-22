@@ -11,7 +11,7 @@
 <style>
   :root{
     --bg:#0a0b0e;--bg-2:#0d0f14;--panel:#12141a;--panel-2:#171a22;--line:#252a35;
-    --ember:#ff6b00;--ember-soft:#ff8a3d;--cyan:#36d6ff;--cyan-soft:#7fe6ff;
+    --ember:#ff6b00;--ember-soft:#ff8a3d;--cyan:#36d6ff;--cyan-soft:#7fe6ff;--gold:#ffc328;
     --fg:#e8eaed;--muted:#8a93a3;--dim:#5c6473;
     --display:'Orbitron',sans-serif;--body:'Chakra Petch',sans-serif;--mono:'Share Tech Mono',monospace;
   }
@@ -50,14 +50,15 @@
   .wrap{position:relative;z-index:2;width:min(1080px,94%);margin:0 auto}
   .path-eyebrow{text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--dim);margin:clamp(28px,5vw,44px) 0 16px}
 
-  /* ===== two equal doors ===== */
-  .doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;margin-bottom:clamp(30px,5vw,50px)}
+  /* ===== three equal doors ===== */
+  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;margin-bottom:clamp(30px,5vw,50px)}
   .door{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;
     padding:clamp(26px,4vw,40px);overflow:hidden;transition:.2s;
     background:linear-gradient(180deg,var(--panel-2),var(--panel));}
   .door::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--ac);opacity:.7}
   .door.free{--ac:var(--ember)}
   .door.tutor{--ac:var(--cyan)}
+  .door.premier{--ac:var(--gold)}
   .door:hover{transform:translateY(-3px);border-color:#39414f;box-shadow:0 22px 54px -28px rgba(0,0,0,.9)}
   .door:hover::before{opacity:1}
   .d-badge{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:#0a0a0a;
@@ -74,6 +75,7 @@
     font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.5px;color:#0a0a0a;background:var(--ac);
     padding:14px;border-radius:11px;transition:.2s;box-shadow:0 0 22px -6px var(--ac)}
   .d-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .door.premier .d-cta{background:linear-gradient(135deg,#ffd24a,#f5a300)}
   .d-cta svg{width:16px;height:16px}
 
   footer{position:relative;z-index:2;text-align:center;padding:clamp(40px,7vw,72px) 18px clamp(40px,6vw,60px)}
@@ -83,7 +85,8 @@
     background:linear-gradient(to right,#fb923c,#f87171,#4ade80);-webkit-background-clip:text;background-clip:text;color:transparent}
   .foot-note{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.5px}
 
-  @media (max-width:760px){ .doors{grid-template-columns:1fr} }
+  @media (max-width:900px){ .doors{grid-template-columns:1fr 1fr} }
+  @media (max-width:560px){ .doors{grid-template-columns:1fr} }
   @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} html{scroll-behavior:auto} }
   :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
 </style>
@@ -154,6 +157,23 @@
       </a>
     </article>
 
+    <!-- PREMIER (third, gold) -->
+    <article class="door premier">
+      <span class="d-badge" data-i18n="premier_badge">PREMIER · PRO</span>
+      <div class="d-call" data-i18n="premier_call">COMMAND CENTER</div>
+      <h2 data-i18n="premier_h">Premier Pro</h2>
+      <p data-i18n="premier_p">AI-guided certification command center. Track every session, measure your improvement, set your certification date, and follow a personalized roadmap to exam success.</p>
+      <div class="d-meta">
+        <span data-i18n="premier_m1">Session tracking &amp; analytics</span>
+        <span data-i18n="premier_m2">Set your certification date</span>
+        <span data-i18n="premier_m3">Personalized exam roadmap</span>
+      </div>
+      <a class="d-cta" href="#" data-todo-gate="premier-pro-url">
+        <span data-i18n="premier_cta">Unlock Premier Pro</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </article>
+
   </section>
 </main>
 
@@ -170,7 +190,7 @@
       headline:'Pass your IT certification — <span class="em">faster.</span>',
       subline:"Interactive, bilingual training built by an active networking instructor.",
       stat1_l:"learner visits",stat2_l:"certification tracks",stat3_l:"bilingual",
-      path:"TWO WAYS IN — PICK YOURS",
+      path:"THREE WAYS IN — PICK YOURS",
       free_badge:"FREE · NO LOGIN",free_call:"PRACTICE SYSTEMS",free_h:"Free Practice",
       free_p:"The practice systems thousands already use — exam sims, quizzes, and study tools. Open, free, no sign-up.",
       free_m1:"7 exam practice systems",free_m2:"VLSM & OSI study tools",free_m3:"Bilingual · EN / ES",
@@ -179,6 +199,10 @@
       tutor_p:"A guided AI tutor for the whole exam — it walks you through every module, then answers your questions when you're stuck.",
       tutor_m1:"6 certification tracks",tutor_m2:"5 layers per module",tutor_m3:"Ask-the-tutor · bilingual",
       tutor_cta:"Enter TUTOR COMMAND",
+      premier_badge:"PREMIER · PRO",premier_call:"COMMAND CENTER",premier_h:"Premier Pro",
+      premier_p:"AI-guided certification command center. Track every session, measure your improvement, set your certification date, and follow a personalized roadmap to exam success.",
+      premier_m1:"Session tracking & analytics",premier_m2:"Set your certification date",premier_m3:"Personalized exam roadmap",
+      premier_cta:"Unlock Premier Pro",
       foot:"Built by an active networking instructor · Prince George's Community College"
     },
     es:{
@@ -187,7 +211,7 @@
       headline:'Aprueba tu certificación de TI — <span class="em">más rápido.</span>',
       subline:"Entrenamiento interactivo y bilingüe creado por un instructor activo de redes.",
       stat1_l:"visitas de estudio",stat2_l:"pistas de certificación",stat3_l:"bilingüe",
-      path:"DOS FORMAS DE EMPEZAR — ELIGE LA TUYA",
+      path:"TRES FORMAS DE EMPEZAR — ELIGE LA TUYA",
       free_badge:"GRATIS · SIN CUENTA",free_call:"SISTEMAS DE PRÁCTICA",free_h:"Práctica Gratuita",
       free_p:"Los sistemas de práctica que ya usan miles — simuladores de examen, cuestionarios y herramientas de estudio. Abierto, gratis, sin registro.",
       free_m1:"7 sistemas de práctica de examen",free_m2:"Herramientas VLSM y OSI",free_m3:"Bilingüe · EN / ES",
@@ -196,6 +220,10 @@
       tutor_p:"Un tutor con IA para todo el examen — te guía por cada módulo y luego responde tus preguntas cuando te atascas.",
       tutor_m1:"6 pistas de certificación",tutor_m2:"5 capas por módulo",tutor_m3:"Pregunta al tutor · bilingüe",
       tutor_cta:"Entrar a TUTOR COMMAND",
+      premier_badge:"PREMIER · PRO",premier_call:"COMMAND CENTER",premier_h:"Premier Pro",
+      premier_p:"Centro de comando para certificaciones con IA. Rastrea cada sesión, mide tu progreso, define tu fecha de certificación y sigue una hoja de ruta personalizada hacia el éxito en el examen.",
+      premier_m1:"Seguimiento de sesiones y analítica",premier_m2:"Define tu fecha de certificación",premier_m3:"Hoja de ruta de examen personalizada",
+      premier_cta:"Desbloquear Premier Pro",
       foot:"Creado por un instructor activo de redes · Prince George's Community College"
     }
   };
