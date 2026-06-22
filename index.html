@@ -76,6 +76,7 @@
     padding:14px;border-radius:11px;transition:.2s;box-shadow:0 0 22px -6px var(--ac)}
   .d-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
   .door.premier .d-cta{background:linear-gradient(135deg,#ffd24a,#f5a300)}
+  .d-cta.soon{opacity:.45;cursor:default;pointer-events:none}
   .d-cta svg{width:16px;height:16px}
 
   footer{position:relative;z-index:2;text-align:center;padding:clamp(40px,7vw,72px) 18px clamp(40px,6vw,60px)}
@@ -168,10 +169,9 @@
         <span data-i18n="premier_m2">Set your certification date</span>
         <span data-i18n="premier_m3">Personalized exam roadmap</span>
       </div>
-      <a class="d-cta" href="#" data-todo-gate="premier-pro-url">
-        <span data-i18n="premier_cta">Unlock Premier Pro</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+      <span class="d-cta soon" aria-disabled="true">
+        <span data-i18n="premier_cta">Premier Pro — Coming Soon</span>
+      </span>
     </article>
 
   </section>
@@ -202,7 +202,7 @@
       premier_badge:"PREMIER · PRO",premier_call:"COMMAND CENTER",premier_h:"Premier Pro",
       premier_p:"AI-guided certification command center. Track every session, measure your improvement, set your certification date, and follow a personalized roadmap to exam success.",
       premier_m1:"Session tracking & analytics",premier_m2:"Set your certification date",premier_m3:"Personalized exam roadmap",
-      premier_cta:"Unlock Premier Pro",
+      premier_cta:"Premier Pro — Coming Soon",
       foot:"Built by an active networking instructor · Prince George's Community College"
     },
     es:{
@@ -223,7 +223,7 @@
       premier_badge:"PREMIER · PRO",premier_call:"COMMAND CENTER",premier_h:"Premier Pro",
       premier_p:"Centro de comando para certificaciones con IA. Rastrea cada sesión, mide tu progreso, define tu fecha de certificación y sigue una hoja de ruta personalizada hacia el éxito en el examen.",
       premier_m1:"Seguimiento de sesiones y analítica",premier_m2:"Define tu fecha de certificación",premier_m3:"Hoja de ruta de examen personalizada",
-      premier_cta:"Desbloquear Premier Pro",
+      premier_cta:"Premier Pro — Próximamente",
       foot:"Creado por un instructor activo de redes · Prince George's Community College"
     }
   };
