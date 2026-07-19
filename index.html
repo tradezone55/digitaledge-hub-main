@@ -11,7 +11,7 @@
 <style>
   :root{
     --bg:#0a0b0e;--bg-2:#0d0f14;--panel:#12141a;--panel-2:#171a22;--line:#252a35;
-    --ember:#ff6b00;--ember-soft:#ff8a3d;--cyan:#36d6ff;--cyan-soft:#7fe6ff;--gold:#ffc328;
+    --ember:#ff6b00;--ember-soft:#ff8a3d;--cyan:#36d6ff;--cyan-soft:#7fe6ff;--gold:#ffc328;--green:#44dd44;
     --fg:#e8eaed;--muted:#8a93a3;--dim:#5c6473;
     --display:'Orbitron',sans-serif;--body:'Chakra Petch',sans-serif;--mono:'Share Tech Mono',monospace;
   }
@@ -42,6 +42,11 @@
   .hero h1{font-family:var(--display);font-weight:900;letter-spacing:.5px;margin:0 auto;max-width:16ch;
     font-size:clamp(30px,6vw,60px);line-height:1.06;text-shadow:0 0 28px rgba(255,107,0,.28);}
   .hero h1 .em{color:var(--ember)}
+  .cert-list{font-family:var(--display);font-weight:900;letter-spacing:.5px;
+    font-size:clamp(18px,2.8vw,26px);margin:14px auto 0;max-width:44ch}
+  .cert-list span{margin:0 6px}
+  .cert-list .c-green{color:var(--green)}
+  .cert-list .c-orange{color:var(--ember)}
   .hero .sub{max-width:54ch;margin:20px auto 0;color:var(--muted);font-size:clamp(15px,2.2vw,19px)}
   .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:26px;
     font-family:var(--mono);font-size:13px;color:var(--dim);letter-spacing:.5px;}
@@ -111,7 +116,8 @@
 
 <section class="hero">
   <div class="eyebrow" data-i18n="eyebrow">DIGITALEDGE LEARNING SYSTEMS</div>
-  <h1 data-i18n="headline">Pass your IT certification — <span class="em">faster.</span></h1>
+  <h1 data-i18n="headline">Certifications</h1>
+  <p class="cert-list" data-i18n="certList"><span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span></p>
   <p class="sub" data-i18n="subline">Interactive, bilingual training built by an active networking instructor.</p>
   <div class="stats">
     <span><b id="stat-count">…</b> <span data-i18n="stat1_l">learner visits</span></span>
@@ -188,7 +194,8 @@
     en:{
       nav_about:"About",nav_support:"Support",
       eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
-      headline:'Pass your IT certification — <span class="em">faster.</span>',
+      headline:'Certifications',
+      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
       subline:"Interactive, bilingual training built by an active networking instructor.",
       stat1_l:"learner visits",stat2_l:"certification tracks",stat3_l:"bilingual",
       path:"THREE WAYS IN — PICK YOURS",
@@ -209,7 +216,8 @@
     es:{
       nav_about:"Acerca de",nav_support:"Soporte",
       eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
-      headline:'Aprueba tu certificación de TI — <span class="em">más rápido.</span>',
+      headline:'Certificaciones',
+      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
       subline:"Entrenamiento interactivo y bilingüe creado por un instructor activo de redes.",
       stat1_l:"visitas de estudio",stat2_l:"pistas de certificación",stat3_l:"bilingüe",
       path:"TRES FORMAS DE EMPEZAR — ELIGE LA TUYA",
