@@ -110,6 +110,8 @@
     <div class="lang" role="group" aria-label="Language">
       <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
       <button id="btn-es" onclick="setLang('es')">ES</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <button id="btn-ht" onclick="setLang('ht')">HT</button>
     </div>
   </nav>
 </header>
@@ -234,6 +236,50 @@
       premier_m1:"Seguimiento de sesiones y analítica",premier_m2:"Define tu fecha de certificación",premier_m3:"Hoja de ruta de examen personalizada",
       premier_cta:"Entrar a PREMIER PRO",
       foot:"Creado por un instructor activo de redes · Prince George's Community College"
+    },
+    fr:{
+      nav_about:"À propos",nav_support:"Support",
+      eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
+      headline:'Certifications',
+      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
+      subline:"Formation interactive et bilingue créée par un instructeur actif en réseautique.",
+      stat1_l:"visites d'apprenants",stat2_l:"filières de certification",stat3_l:"bilingue",
+      path:"TROIS FAÇONS DE COMMENCER — CHOISIS LA TIENNE",
+      free_badge:"GRATUIT · SANS COMPTE",free_call:"SYSTÈMES DE PRATIQUE",free_h:"Pratique Gratuite",
+      free_p:"Les systèmes de pratique utilisés par des milliers d'étudiants — simulateurs d'examen, quiz et outils d'étude. Ouvert, gratuit, sans inscription.",
+      free_m1:"7 systèmes de pratique d'examen",free_m2:"Outils VLSM et OSI",free_m3:"Bilingue · EN / ES",
+      free_cta:"Ouvrir la Pratique Gratuite",
+      tutor_badge:"TUTEUR GUIDÉ",tutor_h:"Tuteur Complet",
+      tutor_p:"Un tuteur IA pour tout l'examen — il te guide à travers chaque module, puis répond à tes questions quand tu es bloqué.",
+      tutor_m1:"6 filières de certification",tutor_m2:"5 couches par module",tutor_m3:"Demande au tuteur · bilingue",
+      tutor_cta:"Entrer dans TUTOR COMMAND",
+      premier_badge:"PREMIER · PRO",premier_call:"CENTRE DE COMMANDE",premier_h:"Premier Pro",
+      premier_p:"Centre de commande de certification guidé par IA. Suis chaque session, mesure tes progrès, fixe ta date de certification et suis une feuille de route personnalisée vers la réussite à l'examen.",
+      premier_m1:"Suivi des sessions et analytique",premier_m2:"Fixe ta date de certification",premier_m3:"Feuille de route d'examen personnalisée",
+      premier_cta:"Entrer dans PREMIER PRO",
+      foot:"Créé par un instructeur actif en réseautique · Prince George's Community College"
+    },
+    ht:{
+      nav_about:"Konsènan",nav_support:"Sipò",
+      eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
+      headline:'Sètifikasyon',
+      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
+      subline:"Fòmasyon entèraktif e bileng ki kreye pa yon enstriktè aktif nan rezo.",
+      stat1_l:"vizit elèv",stat2_l:"filyè sètifikasyon",stat3_l:"bileng",
+      path:"TWA FASON POU KÒMANSE — CHWAZI PA W",
+      free_badge:"GRATIS · SAN KONT",free_call:"SISTÈM PRATIK",free_h:"Pratik Gratis",
+      free_p:"Sistèm pratik dè milye elèv deja itilize — simulatè egzamen, quiz, ak zouti etid. Louvri, gratis, san enskripsyon.",
+      free_m1:"7 sistèm pratik egzamen",free_m2:"Zouti VLSM ak OSI",free_m3:"Bileng · EN / ES",
+      free_cta:"Louvri Pratik Gratis",
+      tutor_badge:"TITÈ GIDE",tutor_h:"Titè Konplè",
+      tutor_p:"Yon titè AI pou tout egzamen an — li gide w pase nan chak modil, epi reponn kesyon w yo lè w bloke.",
+      tutor_m1:"6 filyè sètifikasyon",tutor_m2:"5 kouch pou chak modil",tutor_m3:"Mande titè a · bileng",
+      tutor_cta:"Antre nan TUTOR COMMAND",
+      premier_badge:"PREMIER · PRO",premier_call:"SANT KOMANNMAN",premier_h:"Premier Pro",
+      premier_p:"Sant kòmandman sètifikasyon gide pa AI. Swiv chak sesyon, mezire pwogrè w, fikse dat sètifikasyon w, epi swiv yon fèy wout pèsonalize pou reyisi egzamen an.",
+      premier_m1:"Swiv sesyon ak analiz",premier_m2:"Fikse dat sètifikasyon w",premier_m3:"Fèy wout egzamen pèsonalize",
+      premier_cta:"Antre nan PREMIER PRO",
+      foot:"Kreye pa yon enstriktè aktif nan rezo · Prince George's Community College"
     }
   };
 
@@ -244,8 +290,9 @@
       const k=e.getAttribute('data-i18n');
       if(d[k]!==undefined)e.innerHTML=d[k];
     });
-    document.getElementById('btn-en').classList.toggle('active',l==='en');
-    document.getElementById('btn-es').classList.toggle('active',l==='es');
+    ['en','es','fr','ht'].forEach(code=>{
+      document.getElementById('btn-'+code).classList.toggle('active',l===code);
+    });
     try{localStorage.setItem('de_lang',l)}catch(e){}
   }
 
