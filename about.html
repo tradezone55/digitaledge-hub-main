@@ -1,598 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About DigitalEdge Learning Systems</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — DigitalEdge Learning Systems</title>
+<meta name="description" content="About DigitalEdge Learning Systems — free IT certification practice built by an active networking instructor. Free Practice stays free; Tutor Command and Premier Pro keep it funded." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0b0e;--bg-2:#0d0f14;--panel:#12141a;--panel-2:#171a22;--line:#252a35;
+    --ember:#ff6b00;--ember-soft:#ff8a3d;--cyan:#36d6ff;--cyan-soft:#7fe6ff;--gold:#ffc328;--green:#44dd44;
+    --fg:#e8eaed;--muted:#a6b0c3;--dim:#7d879c;
+    --display:'Orbitron',sans-serif;--body:'Chakra Petch',sans-serif;--mono:'Share Tech Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.55;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background-image:radial-gradient(900px 480px at 50% -8%,rgba(255,107,0,.10),transparent 62%),radial-gradient(620px 380px at 110% 8%,rgba(54,214,255,.06),transparent 60%);}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.35;
+    background:repeating-linear-gradient(to bottom,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;}
+  a{color:inherit;text-decoration:none}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
+  .nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+    padding:14px clamp(16px,4vw,42px);background:rgba(10,11,14,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand svg{width:24px;height:24px;color:var(--ember);filter:drop-shadow(0 0 8px rgba(255,107,0,.55))}
+  .brand .name{font-family:var(--display);font-weight:900;letter-spacing:1px;font-size:18px}
+  .brand .name .edge{color:var(--ember)}
+  .nav-right{display:flex;align-items:center;gap:clamp(14px,3vw,24px)}
+  .nav-right a{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.5px}
+  .nav-right a:hover{color:var(--fg)}
+  .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:12px;}
+  .lang button{background:transparent;border:0;color:var(--dim);padding:6px 12px;cursor:pointer;letter-spacing:.5px;transition:.18s;}
+  .lang button.active{background:var(--ember);color:#0a0a0a;font-weight:700}
 
-        /* Header Navigation */
-        .header {
-            background: #000;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
+  .wrap{position:relative;z-index:2;width:min(1080px,94%);margin:0 auto}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-        }
+  .page-head{position:relative;z-index:2;padding:clamp(40px,7vw,70px) clamp(18px,5vw,24px) clamp(12px,3vw,22px);
+    max-width:820px;margin:0 auto;text-align:center}
+  .crumb{font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--dim);margin-bottom:14px}
+  .crumb a{color:var(--cyan)}
+  .page-head h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,5vw,46px);margin:0 0 12px;line-height:1.05;
+    text-shadow:0 0 28px rgba(255,107,0,.28)}
+  .page-head h1 .em{color:var(--ember)}
+  .page-head p{color:var(--muted);font-size:clamp(15px,2.2vw,18px);margin:0 auto;max-width:52ch}
 
-        .logo-star {
-            color: #00ff00;
-            font-size: 1.5rem;
-        }
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:clamp(28px,5vw,48px) 0 18px;flex-wrap:wrap}
+  .sec-head .k{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.6vw,23px);letter-spacing:.5px}
+  .sec-head .d{font-family:var(--mono);font-size:13px;color:var(--dim);letter-spacing:.5px}
+  .sec-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);min-width:30px}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+  .panel{position:relative;border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3.5vw,34px);
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));overflow:hidden;}
+  .panel::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--ac,var(--ember));opacity:.6}
+  .panel p{color:var(--muted);font-size:15.5px;margin:0 0 14px}
+  .panel p:last-child{margin-bottom:0}
+  .commitment{margin-top:16px;border:1px solid rgba(68,221,68,.35);border-radius:12px;padding:18px 20px;
+    background:linear-gradient(180deg,rgba(68,221,68,.07),transparent);}
+  .commitment strong{color:var(--green)}
 
-        .nav-links a {
-            color: #00ff00;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+  .card{position:relative;border:1px solid var(--line);border-radius:13px;padding:18px 20px;
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));transition:.2s;overflow:hidden;}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--ember));opacity:.55;transition:.2s}
+  .card.cy{--accent:var(--cyan)}
+  .card:hover{transform:translateY(-3px);border-color:#39414f;box-shadow:0 16px 40px -24px rgba(0,0,0,.9)}
+  .card:hover::before{opacity:1}
+  .card h3{font-family:var(--display);font-weight:700;font-size:15px;margin:0 0 6px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
 
-        .nav-links a:hover {
-            opacity: 0.7;
-        }
+  .benefits{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .benefits li{border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:9px;
+    padding:11px 15px;background:var(--bg-2);color:var(--muted);font-size:14.5px}
 
-        .support-btn {
-            background: transparent;
-            border: 2px solid #00ff00;
-            color: #00ff00;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
+  /* ===== clearly marked video placeholder ===== */
+  .video-ph{border:2px dashed #39414f;border-radius:14px;background:var(--bg-2);
+    aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:24px}
+  .video-ph .play{width:64px;height:64px;border-radius:50%;border:2px solid var(--ember);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 24px -6px var(--ember)}
+  .video-ph .play svg{width:22px;height:22px;color:var(--ember);margin-left:4px}
+  .video-ph .ph-label{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--ember-soft)}
+  .video-cap{margin-top:14px;text-align:center;color:var(--dim);font-size:14px;font-style:italic}
 
-        .support-btn:hover {
-            background: #00ff00;
-            color: #000;
-        }
+  .creator{display:flex;align-items:center;gap:clamp(18px,3vw,30px);flex-wrap:wrap}
+  .avatar{width:110px;height:110px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    font-size:48px;background:var(--bg-2);border:2px solid var(--line);box-shadow:0 0 26px -8px var(--ember)}
+  .creator-info{flex:1;min-width:240px}
+  .creator-info h3{font-family:var(--display);font-weight:900;font-size:21px;margin:0 0 4px;color:var(--ember)}
+  .creator-info .role{font-family:var(--mono);font-size:12.5px;letter-spacing:1px;color:var(--cyan);margin:0 0 12px}
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-        }
+  .panel.support{--ac:var(--gold)}
+  .support-cta{text-align:center;margin-top:22px}
+  .support-cta p{color:var(--fg)}
+  .cta-button{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:14px;
+    letter-spacing:.5px;color:#0a0a0a;background:linear-gradient(135deg,#ffd24a,#f5a300);padding:13px 26px;border-radius:11px;
+    transition:.2s;box-shadow:0 0 22px -6px var(--gold)}
+  .cta-button:hover{filter:brightness(1.08);transform:translateY(-1px)}
 
-        .hero h1 {
-            font-size: 3rem;
-            color: #ff4500;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
+  .roadmap{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .roadmap li{border:1px solid var(--line);border-left:3px solid var(--ember);border-radius:9px;
+    padding:12px 15px;background:var(--bg-2);color:var(--muted);font-size:14.5px}
+  .roadmap li::before{content:"▸ ";color:var(--ember)}
 
-        .hero-icon {
-            font-size: 3rem;
-        }
+  .faq{display:flex;flex-direction:column;gap:12px}
+  .faq-item{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:linear-gradient(180deg,var(--panel-2),var(--panel))}
+  .faq-item h4{font-family:var(--body);font-weight:700;font-size:15.5px;color:var(--cyan);margin:0 0 8px}
+  .faq-item p{margin:0;color:var(--muted);font-size:14.5px}
 
-        .hero p {
-            font-size: 1.3rem;
-            color: #aaa;
-            font-style: italic;
-        }
+  .contact{text-align:center}
+  .contact p{color:var(--muted);margin:0 0 16px}
+  .contact a.go{font-family:var(--mono);font-size:14px;color:var(--cyan);letter-spacing:.5px}
+  .contact a.go:hover{color:var(--cyan-soft)}
 
-        /* Main Content Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+  footer{position:relative;z-index:2;text-align:center;padding:clamp(40px,7vw,72px) 18px clamp(40px,6vw,60px)}
+  .sig-wrap{display:inline-block;padding:2px;border-radius:999px;background:linear-gradient(90deg,#ff4444,#ff8800,#44dd44)}
+  .sig-inner{background:#0a0a0f;border-radius:999px;padding:11px 30px}
+  .sig-inner span{font-family:var(--body);font-weight:700;letter-spacing:.6px;font-size:14px;
+    background:linear-gradient(to right,#fb923c,#f87171,#4ade80);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .foot-note{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.5px}
 
-        /* Section Styling */
-        .section {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .section h2 {
-            color: #ff4500;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #333;
-        }
-
-        .section h3 {
-            color: #00ff00;
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .section p {
-            margin-bottom: 1rem;
-            color: #ccc;
-            font-size: 1.1rem;
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .feature-card {
-            background: #0f0f0f;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: #00ff00;
-        }
-
-        .feature-card h4 {
-            color: #ff4500;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .feature-card p {
-            color: #aaa;
-            font-size: 0.95rem;
-        }
-
-        /* Benefits List */
-        .benefits-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .benefits-list li {
-            padding: 0.75rem;
-            margin-bottom: 0.5rem;
-            background: #0f0f0f;
-            border-left: 3px solid #00ff00;
-            border-radius: 4px;
-            color: #ccc;
-            font-size: 1.05rem;
-        }
-
-        /* Video Container */
-        .video-container {
-            background: #0f0f0f;
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .video-placeholder {
-            background: #000;
-            border: 2px dashed #555;
-            border-radius: 8px;
-            padding: 4rem 2rem;
-            color: #777;
-            font-size: 1.1rem;
-        }
-
-        .video-placeholder p {
-            color: #777;
-        }
-
-        /* Support Section */
-        .support-section {
-            background: linear-gradient(135deg, #1a2a1a 0%, #1a1a1a 100%);
-            border: 2px solid #00ff00;
-        }
-
-        .support-cta {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .support-cta .cta-button {
-            display: inline-block;
-            background: #00ff00;
-            color: #000;
-            padding: 1rem 3rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .support-cta .cta-button:hover {
-            background: #00cc00;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-        }
-
-        /* Supporters Grid */
-        .supporters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .supporter-card {
-            background: #0f0f0f;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            color: #888;
-            font-style: italic;
-        }
-
-        /* Roadmap Items */
-        .roadmap-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .roadmap-list li {
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            background: #0f0f0f;
-            border-left: 3px solid #ff4500;
-            border-radius: 4px;
-            color: #ccc;
-            font-size: 1.05rem;
-        }
-
-        .roadmap-list li::before {
-            content: "🔜 ";
-            margin-right: 0.5rem;
-        }
-
-        /* FAQ Section */
-        .faq-item {
-            background: #0f0f0f;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .faq-item h4 {
-            color: #00ff00;
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
-        }
-
-        .faq-item p {
-            color: #aaa;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            text-align: center;
-            padding: 2rem;
-            background: #0f0f0f;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-
-        .contact-info a {
-            color: #00ff00;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* About Creator */
-        .creator-profile {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem;
-            background: #0f0f0f;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
-
-        .creator-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #00ff00;
-            flex-shrink: 0;
-        }
-
-        .creator-info h3 {
-            margin-top: 0;
-            color: #ff4500;
-        }
-
-        /* Footer */
-        .footer {
-            background: #000;
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid #222;
-            margin-top: 3rem;
-        }
-
-        .footer p {
-            color: #666;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-                flex-direction: column;
-            }
-
-            .section {
-                padding: 2rem 1.5rem;
-            }
-
-            .creator-profile {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+  @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} html{scroll-behavior:auto} }
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+</style>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header class="header">
-        <a href="/" class="logo">
-            <span class="logo-star">⭐</span>
-            <span>DigitalEdge</span>
-        </a>
-        <nav class="nav-links">
-            <a href="/">Systems</a>
-            <a href="/about">About</a>
-            <button class="support-btn" onclick="scrollToSupport()">Support</button>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>
-            <span class="hero-icon">⚡</span>
-            <span>About DigitalEdge Learning Systems</span>
-        </h1>
-        <p>Free exam preparation tools built by educators, for learners.</p>
-    </section>
-
-    <!-- Main Content -->
-    <div class="container">
-        
-        <!-- Mission Section -->
-        <section class="section">
-            <h2>Our Mission</h2>
-            <p>
-                DigitalEdge was created to solve a simple problem: students need quality, accessible practice tools to succeed in their IT certifications and technical courses. As an instructor in the school and college system, I saw students struggling to find affordable, effective exam simulators and study resources. So I built this hub.
-            </p>
-            <p>
-                <strong style="color: #00ff00;">Our commitment:</strong> DigitalEdge will always be free for students and learners. Every tool here is designed with real classroom experience in mind: timed practice, multilingual support, detailed explanations, and realistic exam environments.
-            </p>
-        </section>
-
-        <!-- What You'll Find Here -->
-        <section class="section">
-            <h2>What You'll Find Here</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4>💻 A+ Certification System</h4>
-                    <p>Full exam practice with real-world scenarios</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🌐 Network+ Mastery</h4>
-                    <p>Interactive preparation for CompTIA Network+</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🧮 VLSM Calculator</h4>
-                    <p>Visualize and master subnetting</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🔒 Security+ Simulator</h4>
-                    <p>Domain practice with review and auto-timer</p>
-                </div>
-                <div class="feature-card">
-                    <h4>☁️ AWS Cloud Practitioner</h4>
-                    <p>Full exam simulator with detailed review</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🐍 Python Exam Simulator</h4>
-                    <p>Python certification practice in English and Spanish</p>
-                </div>
-                <div class="feature-card">
-                    <h4>📡 CCNA Exam Simulator</h4>
-                    <p>Full exam with English/Spanish support and history</p>
-                </div>
-                <div class="feature-card">
-                    <h4>📝 A+ Quiz System</h4>
-                    <p>Test your hardware and software knowledge</p>
-                </div>
-            </div>
-
-            <h3>All Systems Feature:</h3>
-            <ul class="benefits-list">
-                <li>✅ Multilingual support — English &amp; Spanish here, plus French &amp; Haitian Creole on Tutor Command and Premier Pro</li>
-                <li>✅ Timed, realistic exam conditions</li>
-                <li>✅ Detailed explanations for every question</li>
-                <li>✅ Progress tracking and review tools</li>
-                <li>✅ Neon UI with auto-timer functionality</li>
-            </ul>
-        </section>
-
-        <!-- Video Section -->
-        <section class="section">
-            <h2>Welcome Video</h2>
-            <div class="video-container">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SquzgKGX3_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top: 1rem; text-align: center; color: #aaa; font-style: italic;">A personal message from Herman Hall about DigitalEdge and our mission to make quality exam prep accessible to all students.</p>
-            </div>
-        </section>
-
-        <!-- About the Creator -->
-        <section class="section">
-            <h2>About the Creator</h2>
-            <div class="creator-profile">
-                <div class="creator-avatar">👨‍🏫</div>
-                <div class="creator-info">
-                    <h3>Herman Hall</h3>
-                    <p style="color: #00ff00; font-weight: bold;">Educator, Author, and Founder of DigitalEdge</p>
-                    <p>
-                        With years of experience teaching in schools, colleges, and private sector training programs, I understand what students need to succeed. This platform brings together everything I wish my students had access to: centralized, free, and built specifically for exam success.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Support Section -->
-        <section class="section support-section" id="support">
-            <h2>Supporting DigitalEdge</h2>
-            <p>
-                DigitalEdge is seeking supporters who believe in accessible education. Your support would help:
-            </p>
-            <ul class="benefits-list">
-                <li>🔧 Maintain and improve existing tools</li>
-                <li>📚 Develop new exam simulators and study systems</li>
-                <li>🌍 Expand multilingual and accessibility features</li>
-                <li>💡 Keep everything free for students</li>
-            </ul>
-
-            <div class="support-cta">
-                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
-                    <strong>Interested in supporting this mission?</strong><br>
-                    If your organization, school, or company benefits from DigitalEdge, consider becoming a supporter.
-                </p>
-                <a href="https://ko-fi.com/hermanhall" target="_blank" rel="noopener" class="cta-button">Become a Supporter</a>
-            </div>
-        </section>
-
-        <!-- What's Coming Next -->
-        <section class="section">
-            <h2>What's Coming Next</h2>
-            <p>We're constantly developing new tools based on student and instructor feedback:</p>
-            <ul class="roadmap-list">
-                <li>Additional certification simulators (Linux+, Cloud+, Server+)</li>
-                <li>Mobile app versions for iOS and Android</li>
-                <li>Collaborative study features and study groups</li>
-                <li>Instructor dashboards for classroom use</li>
-                <li>Performance analytics and progress tracking</li>
-                <li>Expanded language support beyond English/Spanish</li>
-            </ul>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h4>Q: Is DigitalEdge really free?</h4>
-                <p>A: Yes! All tools are completely free for students and learners. There are no hidden fees, paywalls, or premium tiers.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: Who can use DigitalEdge?</h4>
-                <p>A: Anyone preparing for IT certifications—students, career changers, professionals, or anyone looking to expand their technical knowledge.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: How is this funded?</h4>
-                <p>A: Through generous supporters—organizations, schools, and companies who want to keep quality education accessible for all students.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: Can instructors use this in their classrooms?</h4>
-                <p>A: Absolutely! That's exactly what it's built for. Feel free to integrate these tools into your curriculum and share with your students.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: How can my organization support DigitalEdge?</h4>
-                <p>A: Contact us about sponsorship opportunities. We offer recognition for supporters and can discuss custom needs for your organization.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: Are the practice exams updated regularly?</h4>
-                <p>A: Yes! We continuously update our question banks and content to reflect the latest certification exam objectives and industry standards.</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section">
-            <h2>Contact & Feedback</h2>
-            <div class="contact-info">
-                <p style="margin-bottom: 1rem;">Have suggestions? Found a bug? Want to support the project?</p>
-                <p><a href="https://digitaledge.network/contact" target="_blank" rel="noopener">📧 Contact Us</a></p>
-                <p style="margin-top: 1rem; color: #aaa;">We'd love to hear from you!</p>
-            </div>
-        </section>
-
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="DigitalEdge home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l3.5 6h6.5l-5.2 3.8 2 6.2L12 16l-6.8 2.9 2-6.2L2 8h6.5L12 2z"/></svg>
+    <span class="name">DIGITAL<span class="edge">EDGE</span></span>
+  </a>
+  <nav class="nav-right">
+    <a href="index.html" data-i18n="nav_home">← Home</a>
+    <a href="support.html" data-i18n="nav_support">Support</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <button id="btn-ht" onclick="setLang('ht')">HT</button>
     </div>
+  </nav>
+</header>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 DigitalEdge Learning Systems. Built by educators, for learners.</p>
-        <p style="margin-top: 0.5rem;">All exam simulators are free and always will be.</p>
-    </footer>
+<header class="page-head">
+  <div class="crumb"><a href="index.html">DigitalEdge</a> / <span data-i18n="crumb2">About</span></div>
+  <h1 data-i18n="ph_h">About <span class="em">DigitalEdge</span> Learning Systems</h1>
+  <p data-i18n="ph_p">Free exam preparation tools built by educators, for learners.</p>
+</header>
 
-    <script>
-        function scrollToSupport() {
-            document.getElementById('support').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+<main class="wrap">
+
+  <!-- Mission -->
+  <div class="sec-head">
+    <span class="k" data-i18n="mission_k">Our Mission</span>
+    <span class="d" data-i18n="mission_d">Why DigitalEdge exists</span>
+    <span class="rule"></span>
+  </div>
+  <section class="panel">
+    <p data-i18n="mission_p1">DigitalEdge was created to solve a simple problem: students need quality, accessible practice tools to succeed in their IT certifications and technical courses. As an instructor in the school and college system, I saw students struggling to find affordable, effective exam simulators and study resources. So I built this hub.</p>
+    <div class="commitment">
+      <p data-i18n="commit"><strong>Our commitment:</strong> Free Practice will always be free. No login, no paywall, no trial clock — the exam sims, quizzes, and study tools stay open to everyone. Tutor Command and Premier Pro are paid systems, and they're what keep the free tier funded and maintained.</p>
+    </div>
+  </section>
+
+  <!-- What you'll find here -->
+  <div class="sec-head">
+    <span class="k" data-i18n="find_k">What You'll Find Here</span>
+    <span class="d" data-i18n="find_d">The free practice arsenal</span>
+    <span class="rule"></span>
+  </div>
+  <section class="grid">
+    <article class="card"><h3>💻 A+ Certification System</h3><p data-i18n="f1">Full exam practice with real-world scenarios</p></article>
+    <article class="card cy"><h3>🌐 Network+ Mastery</h3><p data-i18n="f2">Interactive preparation for CompTIA Network+</p></article>
+    <article class="card"><h3>🧮 VLSM Calculator</h3><p data-i18n="f3">Visualize and master subnetting</p></article>
+    <article class="card cy"><h3>🔒 Security+ Simulator</h3><p data-i18n="f4">Domain practice with review and auto-timer</p></article>
+    <article class="card"><h3>☁️ AWS Cloud Practitioner</h3><p data-i18n="f5">Full exam simulator with detailed review</p></article>
+    <article class="card cy"><h3>🐍 Python Exam Simulator</h3><p data-i18n="f6">Python certification practice in English and Spanish</p></article>
+    <article class="card"><h3>📡 CCNA Exam Simulator</h3><p data-i18n="f7">Full exam with English/Spanish support and history</p></article>
+    <article class="card cy"><h3>📝 A+ Quiz System</h3><p data-i18n="f8">Test your hardware and software knowledge</p></article>
+  </section>
+  <section class="panel" style="margin-top:16px">
+    <p style="font-family:var(--mono);font-size:13px;letter-spacing:1px;color:var(--cyan);margin-bottom:4px" data-i18n="allsys_h">ALL SYSTEMS FEATURE:</p>
+    <ul class="benefits">
+      <li data-i18n="b1">Multilingual support — English &amp; Spanish here, plus French &amp; Haitian Creole on Tutor Command and Premier Pro</li>
+      <li data-i18n="b2">Timed, realistic exam conditions</li>
+      <li data-i18n="b3">Detailed explanations for every question</li>
+      <li data-i18n="b4">Progress tracking and review tools</li>
+      <li data-i18n="b5">Neon UI with auto-timer functionality</li>
+    </ul>
+  </section>
+
+  <!-- Welcome video -->
+  <div class="sec-head">
+    <span class="k" data-i18n="video_k">Welcome Video</span>
+    <span class="rule"></span>
+  </div>
+  <section class="panel">
+    <!-- ================================================================
+         VIDEO PLACEHOLDER — replace this .video-ph block with the embed
+         when the new welcome video is ready.
+         Previous (old-brand) video, kept for reference / easy restore:
+         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;">
+           <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/SquzgKGX3_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         </div>
+         ================================================================ -->
+    <div class="video-ph">
+      <div class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="ph-label" data-i18n="video_ph">NEW WELCOME VIDEO — COMING SOON</div>
+    </div>
+    <p class="video-cap" data-i18n="video_cap">A personal message from Herman Hall about DigitalEdge and our mission to make quality exam prep accessible to all students.</p>
+  </section>
+
+  <!-- Creator -->
+  <div class="sec-head">
+    <span class="k" data-i18n="creator_k">About the Creator</span>
+    <span class="rule"></span>
+  </div>
+  <section class="panel">
+    <div class="creator">
+      <div class="avatar">👨‍🏫</div>
+      <div class="creator-info">
+        <h3>Herman Hall</h3>
+        <p class="role" data-i18n="creator_role">Educator, Author, and Founder of DigitalEdge</p>
+        <p data-i18n="creator_p">With years of experience teaching in schools, colleges, and private sector training programs, I understand what students need to succeed. This platform brings together everything I wish my students had access to: centralized, free, and built specifically for exam success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <div class="sec-head">
+    <span class="k" data-i18n="support_k">Supporting DigitalEdge</span>
+    <span class="rule"></span>
+  </div>
+  <section class="panel support" id="support">
+    <p data-i18n="support_p">DigitalEdge is seeking supporters who believe in accessible education. Your support helps:</p>
+    <ul class="benefits">
+      <li data-i18n="s1">🔧 Maintain and improve existing tools</li>
+      <li data-i18n="s2">📚 Develop new exam simulators and study systems</li>
+      <li data-i18n="s3">🌍 Expand multilingual and accessibility features</li>
+      <li data-i18n="s4">💡 Keep Free Practice free for every learner</li>
+    </ul>
+    <div class="support-cta">
+      <p data-i18n="support_cta_p"><strong>Interested in supporting this mission?</strong><br>If your organization, school, or company benefits from DigitalEdge, consider becoming a supporter.</p>
+      <a href="https://ko-fi.com/hermanhall" target="_blank" rel="noopener" class="cta-button"><span data-i18n="support_cta">Become a Supporter</span></a>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <div class="sec-head">
+    <span class="k" data-i18n="next_k">What's Coming Next</span>
+    <span class="rule"></span>
+  </div>
+  <section class="panel">
+    <p data-i18n="next_p">We're constantly developing new tools based on student and instructor feedback:</p>
+    <ul class="roadmap">
+      <li data-i18n="r1">Additional certification simulators (Linux+, Cloud+, Server+)</li>
+      <li data-i18n="r2">Mobile app versions for iOS and Android</li>
+      <li data-i18n="r3">Collaborative study features and study groups</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <div class="sec-head">
+    <span class="k" data-i18n="faq_k">Frequently Asked Questions</span>
+    <span class="rule"></span>
+  </div>
+  <section class="faq">
+    <div class="faq-item"><h4 data-i18n="q1">Q: Is DigitalEdge really free?</h4><p data-i18n="a1">A: Free Practice is — completely. No login, no paywall, no trial clock. Tutor Command and Premier Pro are paid systems, and they're what keep the free tier funded and maintained.</p></div>
+    <div class="faq-item"><h4 data-i18n="q2">Q: Who can use DigitalEdge?</h4><p data-i18n="a2">A: Anyone preparing for IT certifications — students, career changers, professionals, or anyone looking to expand their technical knowledge.</p></div>
+    <div class="faq-item"><h4 data-i18n="q3">Q: How is this funded?</h4><p data-i18n="a3">A: Tutor Command and Premier Pro subscriptions fund the free tier, alongside supporters — organizations, schools, and companies who want to keep quality education accessible.</p></div>
+    <div class="faq-item"><h4 data-i18n="q4">Q: Can instructors use this in their classrooms?</h4><p data-i18n="a4">A: Absolutely! That's exactly what it's built for. Feel free to integrate these tools into your curriculum and share with your students.</p></div>
+    <div class="faq-item"><h4 data-i18n="q5">Q: How can my organization support DigitalEdge?</h4><p data-i18n="a5">A: Contact us about sponsorship opportunities. We offer recognition for supporters and can discuss custom needs for your organization.</p></div>
+    <div class="faq-item"><h4 data-i18n="q6">Q: Are the practice exams updated regularly?</h4><p data-i18n="a6">A: Yes! We continuously update our question banks and content to reflect the latest certification exam objectives and industry standards.</p></div>
+  </section>
+
+  <!-- Contact -->
+  <div class="sec-head">
+    <span class="k" data-i18n="contact_k">Contact &amp; Feedback</span>
+    <span class="rule"></span>
+  </div>
+  <section class="panel contact">
+    <p data-i18n="contact_p">Have suggestions? Found a bug? Want to support the project?</p>
+    <a class="go" href="support.html" data-i18n="contact_cta">Visit Support →</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="sig-wrap"><div class="sig-inner"><span>© 2026 Herman Hall — DigitalEdge</span></div></div>
+  <div class="foot-note" data-i18n="foot">Built by an active networking instructor · Prince George's Community College</div>
+</footer>
+
+<script>
+  const I18N={
+    en:{
+      nav_home:"← Home",nav_support:"Support",crumb2:"About",
+      ph_h:'About <span class="em">DigitalEdge</span> Learning Systems',
+      ph_p:"Free exam preparation tools built by educators, for learners.",
+      mission_k:"Our Mission",mission_d:"Why DigitalEdge exists",
+      mission_p1:"DigitalEdge was created to solve a simple problem: students need quality, accessible practice tools to succeed in their IT certifications and technical courses. As an instructor in the school and college system, I saw students struggling to find affordable, effective exam simulators and study resources. So I built this hub.",
+      commit:"<strong>Our commitment:</strong> Free Practice will always be free. No login, no paywall, no trial clock — the exam sims, quizzes, and study tools stay open to everyone. Tutor Command and Premier Pro are paid systems, and they're what keep the free tier funded and maintained.",
+      find_k:"What You'll Find Here",find_d:"The free practice arsenal",
+      f1:"Full exam practice with real-world scenarios",
+      f2:"Interactive preparation for CompTIA Network+",
+      f3:"Visualize and master subnetting",
+      f4:"Domain practice with review and auto-timer",
+      f5:"Full exam simulator with detailed review",
+      f6:"Python certification practice in English and Spanish",
+      f7:"Full exam with English/Spanish support and history",
+      f8:"Test your hardware and software knowledge",
+      allsys_h:"ALL SYSTEMS FEATURE:",
+      b1:"Multilingual support — English & Spanish here, plus French & Haitian Creole on Tutor Command and Premier Pro",
+      b2:"Timed, realistic exam conditions",
+      b3:"Detailed explanations for every question",
+      b4:"Progress tracking and review tools",
+      b5:"Neon UI with auto-timer functionality",
+      video_k:"Welcome Video",
+      video_ph:"NEW WELCOME VIDEO — COMING SOON",
+      video_cap:"A personal message from Herman Hall about DigitalEdge and our mission to make quality exam prep accessible to all students.",
+      creator_k:"About the Creator",
+      creator_role:"Educator, Author, and Founder of DigitalEdge",
+      creator_p:"With years of experience teaching in schools, colleges, and private sector training programs, I understand what students need to succeed. This platform brings together everything I wish my students had access to: centralized, free, and built specifically for exam success.",
+      support_k:"Supporting DigitalEdge",
+      support_p:"DigitalEdge is seeking supporters who believe in accessible education. Your support helps:",
+      s1:"🔧 Maintain and improve existing tools",
+      s2:"📚 Develop new exam simulators and study systems",
+      s3:"🌍 Expand multilingual and accessibility features",
+      s4:"💡 Keep Free Practice free for every learner",
+      support_cta_p:"<strong>Interested in supporting this mission?</strong><br>If your organization, school, or company benefits from DigitalEdge, consider becoming a supporter.",
+      support_cta:"Become a Supporter",
+      next_k:"What's Coming Next",
+      next_p:"We're constantly developing new tools based on student and instructor feedback:",
+      r1:"Additional certification simulators (Linux+, Cloud+, Server+)",
+      r2:"Mobile app versions for iOS and Android",
+      r3:"Collaborative study features and study groups",
+      faq_k:"Frequently Asked Questions",
+      q1:"Q: Is DigitalEdge really free?",
+      a1:"A: Free Practice is — completely. No login, no paywall, no trial clock. Tutor Command and Premier Pro are paid systems, and they're what keep the free tier funded and maintained.",
+      q2:"Q: Who can use DigitalEdge?",
+      a2:"A: Anyone preparing for IT certifications — students, career changers, professionals, or anyone looking to expand their technical knowledge.",
+      q3:"Q: How is this funded?",
+      a3:"A: Tutor Command and Premier Pro subscriptions fund the free tier, alongside supporters — organizations, schools, and companies who want to keep quality education accessible.",
+      q4:"Q: Can instructors use this in their classrooms?",
+      a4:"A: Absolutely! That's exactly what it's built for. Feel free to integrate these tools into your curriculum and share with your students.",
+      q5:"Q: How can my organization support DigitalEdge?",
+      a5:"A: Contact us about sponsorship opportunities. We offer recognition for supporters and can discuss custom needs for your organization.",
+      q6:"Q: Are the practice exams updated regularly?",
+      a6:"A: Yes! We continuously update our question banks and content to reflect the latest certification exam objectives and industry standards.",
+      contact_k:"Contact & Feedback",
+      contact_p:"Have suggestions? Found a bug? Want to support the project?",
+      contact_cta:"Visit Support →",
+      foot:"Built by an active networking instructor · Prince George's Community College"
+    },
+    es:{
+      nav_home:"← Inicio",nav_support:"Soporte",crumb2:"Acerca de",
+      ph_h:'Acerca de <span class="em">DigitalEdge</span> Learning Systems',
+      ph_p:"Herramientas gratuitas de preparación de exámenes creadas por educadores, para estudiantes.",
+      mission_k:"Nuestra Misión",mission_d:"Por qué existe DigitalEdge",
+      mission_p1:"DigitalEdge nació para resolver un problema simple: los estudiantes necesitan herramientas de práctica accesibles y de calidad para tener éxito en sus certificaciones de TI y cursos técnicos. Como instructor en el sistema escolar y universitario, vi a estudiantes con dificultades para encontrar simuladores de examen y recursos de estudio asequibles y eficaces. Así que construí este centro.",
+      commit:"<strong>Nuestro compromiso:</strong> La Práctica Gratuita siempre será gratis. Sin cuenta, sin muro de pago, sin reloj de prueba — los simuladores de examen, cuestionarios y herramientas de estudio quedan abiertos para todos. Tutor Command y Premier Pro son sistemas de pago, y son los que mantienen financiado y en marcha el nivel gratuito.",
+      find_k:"Lo Que Encontrarás Aquí",find_d:"El arsenal de práctica gratuita",
+      f1:"Práctica de examen completa con escenarios del mundo real",
+      f2:"Preparación interactiva para CompTIA Network+",
+      f3:"Visualiza y domina las subredes",
+      f4:"Práctica por dominio con repaso y autocronómetro",
+      f5:"Simulador de examen completo con repaso detallado",
+      f6:"Práctica de certificación de Python en inglés y español",
+      f7:"Examen completo con soporte inglés/español e historial",
+      f8:"Pon a prueba tus conocimientos de hardware y software",
+      allsys_h:"TODOS LOS SISTEMAS INCLUYEN:",
+      b1:"Soporte multilingüe — inglés y español aquí, más francés y criollo haitiano en Tutor Command y Premier Pro",
+      b2:"Condiciones de examen cronometradas y realistas",
+      b3:"Explicaciones detalladas para cada pregunta",
+      b4:"Seguimiento de progreso y herramientas de repaso",
+      b5:"Interfaz neón con autocronómetro",
+      video_k:"Video de Bienvenida",
+      video_ph:"NUEVO VIDEO DE BIENVENIDA — PRÓXIMAMENTE",
+      video_cap:"Un mensaje personal de Herman Hall sobre DigitalEdge y nuestra misión de hacer accesible una preparación de examen de calidad para todos los estudiantes.",
+      creator_k:"Sobre el Creador",
+      creator_role:"Educador, Autor y Fundador de DigitalEdge",
+      creator_p:"Con años de experiencia enseñando en escuelas, universidades y programas de formación del sector privado, entiendo lo que los estudiantes necesitan para tener éxito. Esta plataforma reúne todo lo que desearía que mis estudiantes hubieran tenido: centralizado, gratuito y construido específicamente para el éxito en el examen.",
+      support_k:"Apoyar a DigitalEdge",
+      support_p:"DigitalEdge busca patrocinadores que crean en la educación accesible. Tu apoyo ayuda a:",
+      s1:"🔧 Mantener y mejorar las herramientas existentes",
+      s2:"📚 Desarrollar nuevos simuladores de examen y sistemas de estudio",
+      s3:"🌍 Ampliar las funciones multilingües y de accesibilidad",
+      s4:"💡 Mantener la Práctica Gratuita gratis para cada estudiante",
+      support_cta_p:"<strong>¿Te interesa apoyar esta misión?</strong><br>Si tu organización, escuela o empresa se beneficia de DigitalEdge, considera convertirte en patrocinador.",
+      support_cta:"Conviértete en Patrocinador",
+      next_k:"Lo Que Viene",
+      next_p:"Desarrollamos constantemente nuevas herramientas según los comentarios de estudiantes e instructores:",
+      r1:"Simuladores de certificación adicionales (Linux+, Cloud+, Server+)",
+      r2:"Versiones de app móvil para iOS y Android",
+      r3:"Funciones de estudio colaborativo y grupos de estudio",
+      faq_k:"Preguntas Frecuentes",
+      q1:"P: ¿DigitalEdge es realmente gratis?",
+      a1:"R: La Práctica Gratuita, sí — completamente. Sin cuenta, sin muro de pago, sin reloj de prueba. Tutor Command y Premier Pro son sistemas de pago, y son los que mantienen financiado el nivel gratuito.",
+      q2:"P: ¿Quién puede usar DigitalEdge?",
+      a2:"R: Cualquiera que se prepare para certificaciones de TI — estudiantes, personas cambiando de carrera, profesionales o cualquiera que quiera ampliar sus conocimientos técnicos.",
+      q3:"P: ¿Cómo se financia esto?",
+      a3:"R: Las suscripciones a Tutor Command y Premier Pro financian el nivel gratuito, junto con patrocinadores — organizaciones, escuelas y empresas que quieren mantener accesible la educación de calidad.",
+      q4:"P: ¿Pueden los instructores usarlo en sus aulas?",
+      a4:"R: ¡Por supuesto! Para eso está construido. Integra estas herramientas en tu plan de estudios y compártelas con tus estudiantes.",
+      q5:"P: ¿Cómo puede mi organización apoyar a DigitalEdge?",
+      a5:"R: Contáctanos sobre oportunidades de patrocinio. Ofrecemos reconocimiento a los patrocinadores y podemos hablar de las necesidades de tu organización.",
+      q6:"P: ¿Se actualizan los exámenes de práctica con regularidad?",
+      a6:"R: ¡Sí! Actualizamos continuamente nuestros bancos de preguntas y contenido para reflejar los objetivos más recientes de los exámenes de certificación.",
+      contact_k:"Contacto y Comentarios",
+      contact_p:"¿Tienes sugerencias? ¿Encontraste un error? ¿Quieres apoyar el proyecto?",
+      contact_cta:"Ir a Soporte →",
+      foot:"Creado por un instructor activo de redes · Prince George's Community College"
+    },
+    fr:{
+      nav_home:"← Accueil",nav_support:"Support",crumb2:"À propos",
+      ph_h:'À propos de <span class="em">DigitalEdge</span> Learning Systems',
+      ph_p:"Des outils gratuits de préparation aux examens, créés par des éducateurs, pour les apprenants.",
+      mission_k:"Notre Mission",mission_d:"Pourquoi DigitalEdge existe",
+      mission_p1:"DigitalEdge est né pour résoudre un problème simple : les étudiants ont besoin d'outils de pratique accessibles et de qualité pour réussir leurs certifications informatiques et leurs cours techniques. En tant qu'instructeur dans le système scolaire et collégial, j'ai vu des étudiants peiner à trouver des simulateurs d'examen et des ressources d'étude abordables et efficaces. Alors j'ai construit ce hub.",
+      commit:"<strong>Notre engagement :</strong> La Pratique Gratuite sera toujours gratuite. Pas de compte, pas de barrière payante, pas de période d'essai — les simulateurs d'examen, les quiz et les outils d'étude restent ouverts à tous. Tutor Command et Premier Pro sont des systèmes payants, et ce sont eux qui financent et maintiennent le niveau gratuit.",
+      find_k:"Ce Que Vous Trouverez Ici",find_d:"L'arsenal de pratique gratuit",
+      f1:"Pratique d'examen complète avec des scénarios réels",
+      f2:"Préparation interactive pour CompTIA Network+",
+      f3:"Visualisez et maîtrisez le subnetting",
+      f4:"Pratique par domaine avec révision et minuteur automatique",
+      f5:"Simulateur d'examen complet avec révision détaillée",
+      f6:"Pratique de certification Python en anglais et en espagnol",
+      f7:"Examen complet avec support anglais/espagnol et historique",
+      f8:"Testez vos connaissances en matériel et logiciels",
+      allsys_h:"TOUS LES SYSTÈMES INCLUENT :",
+      b1:"Support multilingue — anglais et espagnol ici, plus français et créole haïtien sur Tutor Command et Premier Pro",
+      b2:"Conditions d'examen chronométrées et réalistes",
+      b3:"Explications détaillées pour chaque question",
+      b4:"Suivi des progrès et outils de révision",
+      b5:"Interface néon avec minuteur automatique",
+      video_k:"Vidéo de Bienvenue",
+      video_ph:"NOUVELLE VIDÉO DE BIENVENUE — BIENTÔT DISPONIBLE",
+      video_cap:"Un message personnel de Herman Hall sur DigitalEdge et notre mission : rendre une préparation d'examen de qualité accessible à tous les étudiants.",
+      creator_k:"À Propos du Créateur",
+      creator_role:"Éducateur, Auteur et Fondateur de DigitalEdge",
+      creator_p:"Avec des années d'expérience d'enseignement dans les écoles, les collèges et les programmes de formation du secteur privé, je comprends ce dont les étudiants ont besoin pour réussir. Cette plateforme rassemble tout ce que j'aurais voulu offrir à mes étudiants : centralisé, gratuit et conçu spécifiquement pour la réussite aux examens.",
+      support_k:"Soutenir DigitalEdge",
+      support_p:"DigitalEdge cherche des soutiens qui croient en une éducation accessible. Votre soutien aide à :",
+      s1:"🔧 Maintenir et améliorer les outils existants",
+      s2:"📚 Développer de nouveaux simulateurs d'examen et systèmes d'étude",
+      s3:"🌍 Étendre les fonctionnalités multilingues et d'accessibilité",
+      s4:"💡 Garder la Pratique Gratuite gratuite pour chaque apprenant",
+      support_cta_p:"<strong>Intéressé à soutenir cette mission ?</strong><br>Si votre organisation, école ou entreprise bénéficie de DigitalEdge, envisagez de devenir un soutien.",
+      support_cta:"Devenir un Soutien",
+      next_k:"Ce Qui Arrive",
+      next_p:"Nous développons constamment de nouveaux outils selon les retours des étudiants et des instructeurs :",
+      r1:"Simulateurs de certification supplémentaires (Linux+, Cloud+, Server+)",
+      r2:"Versions d'application mobile pour iOS et Android",
+      r3:"Fonctions d'étude collaborative et groupes d'étude",
+      faq_k:"Questions Fréquentes",
+      q1:"Q : DigitalEdge est-il vraiment gratuit ?",
+      a1:"R : La Pratique Gratuite, oui — complètement. Pas de compte, pas de barrière payante, pas de période d'essai. Tutor Command et Premier Pro sont des systèmes payants, et ce sont eux qui financent le niveau gratuit.",
+      q2:"Q : Qui peut utiliser DigitalEdge ?",
+      a2:"R : Toute personne qui prépare une certification informatique — étudiants, personnes en reconversion, professionnels, ou quiconque veut élargir ses connaissances techniques.",
+      q3:"Q : Comment est-ce financé ?",
+      a3:"R : Les abonnements à Tutor Command et Premier Pro financent le niveau gratuit, aux côtés de soutiens — organisations, écoles et entreprises qui veulent garder une éducation de qualité accessible.",
+      q4:"Q : Les instructeurs peuvent-ils l'utiliser en classe ?",
+      a4:"R : Absolument ! C'est exactement pour ça qu'il est construit. Intégrez ces outils dans votre programme et partagez-les avec vos étudiants.",
+      q5:"Q : Comment mon organisation peut-elle soutenir DigitalEdge ?",
+      a5:"R : Contactez-nous au sujet des opportunités de parrainage. Nous offrons une reconnaissance aux soutiens et pouvons discuter des besoins de votre organisation.",
+      q6:"Q : Les examens de pratique sont-ils mis à jour régulièrement ?",
+      a6:"R : Oui ! Nous mettons continuellement à jour nos banques de questions et notre contenu pour refléter les objectifs les plus récents des examens de certification.",
+      contact_k:"Contact et Retours",
+      contact_p:"Des suggestions ? Un bug ? Envie de soutenir le projet ?",
+      contact_cta:"Aller au Support →",
+      foot:"Créé par un instructeur actif en réseautique · Prince George's Community College"
+    },
+    ht:{
+      nav_home:"← Akèy",nav_support:"Sipò",crumb2:"Konsènan",
+      ph_h:'Konsènan <span class="em">DigitalEdge</span> Learning Systems',
+      ph_p:"Zouti gratis pou prepare egzamen, kreye pa edikatè, pou elèv yo.",
+      mission_k:"Misyon Nou",mission_d:"Poukisa DigitalEdge egziste",
+      mission_p1:"DigitalEdge te kreye pou rezoud yon pwoblèm senp: elèv yo bezwen zouti pratik bon kalite ki aksesib pou yo reyisi sètifikasyon IT yo ak kou teknik yo. Kòm enstriktè nan sistèm lekòl ak kolèj la, mwen te wè elèv k ap lite pou jwenn simulatè egzamen ak resous etid ki abòdab e efikas. Se konsa mwen bati sant sa a.",
+      commit:"<strong>Angajman nou:</strong> Pratik Gratis ap toujou gratis. San kont, san baryè peman, san revèy esè — simulatè egzamen yo, quiz yo, ak zouti etid yo rete louvri pou tout moun. Tutor Command ak Premier Pro se sistèm peyan, e se yo menm ki kenbe nivo gratis la finanse epi antretni.",
+      find_k:"Sa W ap Jwenn Isit La",find_d:"Asenal pratik gratis la",
+      f1:"Pratik egzamen konplè ak senaryo mond reyèl",
+      f2:"Preparasyon entèraktif pou CompTIA Network+",
+      f3:"Vizualize epi metrize subnetting",
+      f4:"Pratik pa domèn ak revizyon ak revèy otomatik",
+      f5:"Simulatè egzamen konplè ak revizyon detaye",
+      f6:"Pratik sètifikasyon Python an anglè ak panyòl",
+      f7:"Egzamen konplè ak sipò anglè/panyòl ak istorik",
+      f8:"Teste konesans ou sou hardware ak software",
+      allsys_h:"TOUT SISTÈM YO GEN LADAN:",
+      b1:"Sipò plizyè lang — anglè ak panyòl isit la, plis franse ak kreyòl ayisyen sou Tutor Command ak Premier Pro",
+      b2:"Kondisyon egzamen reyalis ak tan limite",
+      b3:"Eksplikasyon detaye pou chak kesyon",
+      b4:"Swivi pwogrè ak zouti revizyon",
+      b5:"Entèfas neyon ak revèy otomatik",
+      video_k:"Videyo Byenveni",
+      video_ph:"NOUVO VIDEYO BYENVENI — TALÈ KONSA",
+      video_cap:"Yon mesaj pèsonèl de Herman Hall sou DigitalEdge ak misyon nou pou rann yon preparasyon egzamen bon kalite aksesib pou tout elèv.",
+      creator_k:"Konsènan Kreyatè a",
+      creator_role:"Edikatè, Otè, ak Fondatè DigitalEdge",
+      creator_p:"Ak plizyè ane eksperyans nan anseye nan lekòl, kolèj, ak pwogram fòmasyon sektè prive, mwen konprann sa elèv yo bezwen pou yo reyisi. Platfòm sa a rasanble tout sa mwen ta renmen elèv mwen yo te genyen: santralize, gratis, epi bati espesyalman pou reyisit nan egzamen.",
+      support_k:"Sipòte DigitalEdge",
+      support_p:"DigitalEdge ap chèche sipòtè ki kwè nan edikasyon aksesib. Sipò w ap ede:",
+      s1:"🔧 Antretni ak amelyore zouti ki egziste yo",
+      s2:"📚 Devlope nouvo simulatè egzamen ak sistèm etid",
+      s3:"🌍 Elaji fonksyon plizyè lang ak aksesibilite",
+      s4:"💡 Kenbe Pratik Gratis gratis pou chak elèv",
+      support_cta_p:"<strong>Ou enterese sipòte misyon sa a?</strong><br>Si òganizasyon w, lekòl ou, oswa konpayi w benefisye de DigitalEdge, konsidere vin yon sipòtè.",
+      support_cta:"Vin yon Sipòtè",
+      next_k:"Sa K ap Vini",
+      next_p:"N ap devlope nouvo zouti tout tan dapre kòmantè elèv ak enstriktè:",
+      r1:"Plis simulatè sètifikasyon (Linux+, Cloud+, Server+)",
+      r2:"Vèsyon aplikasyon mobil pou iOS ak Android",
+      r3:"Fonksyon etid kolaboratif ak gwoup etid",
+      faq_k:"Kesyon Moun Poze Souvan",
+      q1:"K: Èske DigitalEdge vrèman gratis?",
+      a1:"R: Pratik Gratis la, wi — nèt. San kont, san baryè peman, san revèy esè. Tutor Command ak Premier Pro se sistèm peyan, e se yo menm ki kenbe nivo gratis la finanse.",
+      q2:"K: Kiyès ki ka itilize DigitalEdge?",
+      a2:"R: Nenpòt moun k ap prepare pou sètifikasyon IT — elèv, moun k ap chanje karyè, pwofesyonèl, oswa nenpòt moun ki vle elaji konesans teknik yo.",
+      q3:"K: Kijan sa finanse?",
+      a3:"R: Abònman Tutor Command ak Premier Pro finanse nivo gratis la, ansanm ak sipòtè — òganizasyon, lekòl, ak konpayi ki vle kenbe edikasyon bon kalite aksesib.",
+      q4:"K: Èske enstriktè ka itilize sa nan klas yo?",
+      a4:"R: Absoliman! Se egzakteman pou sa li bati. Entegre zouti sa yo nan kourikoulòm ou epi pataje yo ak elèv ou yo.",
+      q5:"K: Kijan òganizasyon mwen ka sipòte DigitalEdge?",
+      a5:"R: Kontakte nou sou opòtinite patwonaj. Nou ofri rekonesans pou sipòtè yo epi nou ka diskite bezwen espesyal òganizasyon w.",
+      q6:"K: Èske egzamen pratik yo mete ajou regilyèman?",
+      a6:"R: Wi! Nou kontinye mete ajou bank kesyon nou yo ak kontni an pou reflete dènye objektif egzamen sètifikasyon yo.",
+      contact_k:"Kontak ak Fidbak",
+      contact_p:"Ou gen sijesyon? Ou jwenn yon erè? Ou vle sipòte pwojè a?",
+      contact_cta:"Ale nan Sipò →",
+      foot:"Kreye pa yon enstriktè aktif nan rezo · Prince George's Community College"
+    }
+  };
+
+  function setLang(l){
+    document.documentElement.lang=l;
+    const d=I18N[l];
+    document.querySelectorAll('[data-i18n]').forEach(e=>{
+      const k=e.getAttribute('data-i18n');
+      if(d[k]!==undefined)e.innerHTML=d[k];
+    });
+    ['en','es','fr','ht'].forEach(code=>{
+      document.getElementById('btn-'+code).classList.toggle('active',l===code);
+    });
+    try{localStorage.setItem('de_lang',l)}catch(e){}
+  }
+
+  // restore language choice carried from the front door (or prior visit)
+  try{const saved=localStorage.getItem('de_lang');if(saved&&saved!=='en')setLang(saved);}catch(e){}
+</script>
 </body>
 </html>
