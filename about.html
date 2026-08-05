@@ -76,13 +76,6 @@
   .benefits li{border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:9px;
     padding:11px 15px;background:var(--bg-2);color:var(--muted);font-size:14.5px}
 
-  /* ===== clearly marked video placeholder ===== */
-  .video-ph{border:2px dashed #39414f;border-radius:14px;background:var(--bg-2);
-    aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:24px}
-  .video-ph .play{width:64px;height:64px;border-radius:50%;border:2px solid var(--ember);display:flex;align-items:center;justify-content:center;
-    box-shadow:0 0 24px -6px var(--ember)}
-  .video-ph .play svg{width:22px;height:22px;color:var(--ember);margin-left:4px}
-  .video-ph .ph-label{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--ember-soft)}
   .video-cap{margin-top:14px;text-align:center;color:var(--dim);font-size:14px;font-style:italic}
 
   .creator{display:flex;align-items:center;gap:clamp(18px,3vw,30px);flex-wrap:wrap}
@@ -199,17 +192,15 @@
     <span class="rule"></span>
   </div>
   <section class="panel">
-    <!-- ================================================================
-         VIDEO PLACEHOLDER — replace this .video-ph block with the embed
-         when the new welcome video is ready.
-         Previous (old-brand) video, kept for reference / easy restore:
-         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;">
-           <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/SquzgKGX3_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-         </div>
-         ================================================================ -->
-    <div class="video-ph">
-      <div class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-      <div class="ph-label" data-i18n="video_ph">NEW WELCOME VIDEO — COMING SOON</div>
+    <div style="position:relative;aspect-ratio:16/9;border:1px solid #FF6B1A;border-radius:12px;overflow:hidden;background:#0a0a0f;">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/RumK1s099y8?rel=0&modestbranding=1"
+        title="Welcome to DigitalEdge Learning Systems"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
     </div>
     <p class="video-cap" data-i18n="video_cap">A personal message from Herman Hall about DigitalEdge and our mission to make quality exam prep accessible to all students.</p>
   </section>
@@ -319,7 +310,6 @@
       b4:"Progress tracking and review tools",
       b5:"Neon UI with auto-timer functionality",
       video_k:"Welcome Video",
-      video_ph:"NEW WELCOME VIDEO — COMING SOON",
       video_cap:"A personal message from Herman Hall about DigitalEdge and our mission to make quality exam prep accessible to all students.",
       creator_k:"About the Creator",
       creator_role:"Educator, Author, and Founder of DigitalEdge",
@@ -378,7 +368,6 @@
       b4:"Seguimiento de progreso y herramientas de repaso",
       b5:"Interfaz neón con autocronómetro",
       video_k:"Video de Bienvenida",
-      video_ph:"NUEVO VIDEO DE BIENVENIDA — PRÓXIMAMENTE",
       video_cap:"Un mensaje personal de Herman Hall sobre DigitalEdge y nuestra misión de hacer accesible una preparación de examen de calidad para todos los estudiantes.",
       creator_k:"Sobre el Creador",
       creator_role:"Educador, Autor y Fundador de DigitalEdge",
@@ -437,7 +426,6 @@
       b4:"Suivi des progrès et outils de révision",
       b5:"Interface néon avec minuteur automatique",
       video_k:"Vidéo de Bienvenue",
-      video_ph:"NOUVELLE VIDÉO DE BIENVENUE — BIENTÔT DISPONIBLE",
       video_cap:"Un message personnel de Herman Hall sur DigitalEdge et notre mission : rendre une préparation d'examen de qualité accessible à tous les étudiants.",
       creator_k:"À Propos du Créateur",
       creator_role:"Éducateur, Auteur et Fondateur de DigitalEdge",
@@ -496,7 +484,6 @@
       b4:"Swivi pwogrè ak zouti revizyon",
       b5:"Entèfas neyon ak revèy otomatik",
       video_k:"Videyo Byenveni",
-      video_ph:"NOUVO VIDEYO BYENVENI — TALÈ KONSA",
       video_cap:"Yon mesaj pèsonèl de Herman Hall sou DigitalEdge ak misyon nou pou rann yon preparasyon egzamen bon kalite aksesib pou tout elèv.",
       creator_k:"Konsènan Kreyatè a",
       creator_role:"Edikatè, Otè, ak Fondatè DigitalEdge",

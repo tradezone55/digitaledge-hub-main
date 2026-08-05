@@ -114,6 +114,32 @@
       opacity: 0.8;
     }
 
+    .lang {
+      display: inline-flex;
+      border: 1px solid rgba(0, 255, 135, 0.46);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .lang button {
+      background: transparent;
+      border: 0;
+      color: #8894b8;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      transition: 0.18s;
+    }
+
+    .lang button.active {
+      background: radial-gradient(circle at 0% 0%, rgba(0, 255, 135, 0.6), rgba(0, 8, 5, 0.95));
+      color: #eafff5;
+      font-weight: 600;
+    }
+
     .headline-block {
       margin-bottom: 18px;
     }
@@ -308,24 +334,30 @@
         <div class="top-bar-left">
           <span class="logo-dot"></span>
           <div>
-            <div class="top-kicker">DigitalEdge • Support Console</div>
+            <div class="top-kicker" data-i18n="kicker">DigitalEdge • Support Console</div>
           </div>
         </div>
 
         <div class="top-bar-right">
+          <div class="lang" role="group" aria-label="Language">
+            <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+            <button id="btn-es" onclick="setLang('es')">ES</button>
+            <button id="btn-fr" onclick="setLang('fr')">FR</button>
+            <button id="btn-ht" onclick="setLang('ht')">HT</button>
+          </div>
           <div class="pill">
-            <span>Live</span>
-            <span>Free Access</span>
+            <span data-i18n="pill_live">Live</span>
+            <span data-i18n="pill_free">Free Access</span>
           </div>
         </div>
       </header>
 
       <section class="headline-block">
-        <div class="eyebrow">Global • Multilingual • IT Training</div>
-        <h1>Support DigitalEdge</h1>
-        <div class="sub-kicker">More Languages • More Certifications • More Access</div>
+        <div class="eyebrow" data-i18n="eyebrow">Global • Multilingual • IT Training</div>
+        <h1 data-i18n="h1">Support DigitalEdge</h1>
+        <div class="sub-kicker" data-i18n="subk">More Languages • More Certifications • More Access</div>
 
-        <p class="body-text">
+        <p class="body-text" data-i18n="body">
           DigitalEdge provides <strong>free, multilingual IT certification simulators</strong> to help students, veterans,
           educators, and communities gain real-world skills. Your support helps expand more certifications, more languages,
           and keep every simulator <strong>100% free</strong>.
@@ -336,33 +368,106 @@
 
         <!-- Individual support: Ko-fi tips / donations -->
         <a href="https://ko-fi.com/hermanhall" target="_blank" class="btn">
-          <span class="btn-label">Individual Support (Coffee / Donation)</span>
-          <span class="btn-pill">Individual</span>
+          <span class="btn-label" data-i18n="b1">Individual Support (Coffee / Donation)</span>
+          <span class="btn-pill" data-i18n="p1">Individual</span>
         </a>
 
         <!-- Institutions: email DigitalEdge for partnership/sponsorship -->
         <a href="mailto:info@digitaledgeprep.com?subject=DigitalEdge%20Institutional%20Support" class="btn">
-          <span class="btn-label">Institutional Sponsorship &amp; Partnership</span>
-          <span class="btn-pill">Institution</span>
+          <span class="btn-label" data-i18n="b2">Institutional Sponsorship &amp; Partnership</span>
+          <span class="btn-pill" data-i18n="p2">Institution</span>
         </a>
 
         <!-- General Mission Contribution: also Ko-fi for now -->
         <a href="https://ko-fi.com/hermanhall" target="_blank" class="btn">
-          <span class="btn-label">General Mission Contribution</span>
-          <span class="btn-pill">Mission</span>
+          <span class="btn-label" data-i18n="b3">General Mission Contribution</span>
+          <span class="btn-pill" data-i18n="p3">Mission</span>
         </a>
       </section>
 
       <footer class="footer-row">
-        <div class="tagline">
+        <div class="tagline" data-i18n="tagline">
           Powered by DigitalEdge • Multilingual IT Simulators • A+, Network+, CCNA, AWS &amp; more
         </div>
         <div>
-          &copy; 2025 <a href="https://digitaledgeprep.com" target="_blank">DigitalEdge</a> | Built by Herman Hall
+          &copy; 2025 <a href="https://digitaledgeprep.com" target="_blank">DigitalEdge</a> | <span data-i18n="built">Built by Herman Hall</span>
         </div>
       </footer>
 
     </div>
   </main>
+
+  <script>
+    const I18N={
+      en:{
+        kicker:"DigitalEdge • Support Console",
+        pill_live:"Live",pill_free:"Free Access",
+        eyebrow:"Global • Multilingual • IT Training",
+        h1:"Support DigitalEdge",
+        subk:"More Languages • More Certifications • More Access",
+        body:'DigitalEdge provides <strong>free, multilingual IT certification simulators</strong> to help students, veterans, educators, and communities gain real-world skills. Your support helps expand more certifications, more languages, and keep every simulator <strong>100% free</strong>.',
+        b1:"Individual Support (Coffee / Donation)",p1:"Individual",
+        b2:"Institutional Sponsorship &amp; Partnership",p2:"Institution",
+        b3:"General Mission Contribution",p3:"Mission",
+        tagline:"Powered by DigitalEdge • Multilingual IT Simulators • A+, Network+, CCNA, AWS &amp; more",
+        built:"Built by Herman Hall"
+      },
+      es:{
+        kicker:"DigitalEdge • Consola de Soporte",
+        pill_live:"En vivo",pill_free:"Acceso gratuito",
+        eyebrow:"Global • Multilingüe • Formación en TI",
+        h1:"Apoya a DigitalEdge",
+        subk:"Más idiomas • Más certificaciones • Más acceso",
+        body:'DigitalEdge ofrece <strong>simuladores gratuitos y multilingües de certificación de TI</strong> para ayudar a estudiantes, veteranos, educadores y comunidades a adquirir habilidades del mundo real. Tu apoyo ayuda a ampliar más certificaciones, más idiomas, y a mantener cada simulador <strong>100% gratis</strong>.',
+        b1:"Apoyo individual (café / donación)",p1:"Individual",
+        b2:"Patrocinio y alianza institucional",p2:"Institución",
+        b3:"Contribución general a la misión",p3:"Misión",
+        tagline:"Impulsado por DigitalEdge • Simuladores de TI multilingües • A+, Network+, CCNA, AWS y más",
+        built:"Creado por Herman Hall"
+      },
+      fr:{
+        kicker:"DigitalEdge • Console de Support",
+        pill_live:"En direct",pill_free:"Accès gratuit",
+        eyebrow:"Mondial • Multilingue • Formation TI",
+        h1:"Soutenez DigitalEdge",
+        subk:"Plus de langues • Plus de certifications • Plus d'accès",
+        body:"DigitalEdge offre des <strong>simulateurs gratuits et multilingues de certification informatique</strong> pour aider les étudiants, les vétérans, les éducateurs et les communautés à acquérir des compétences concrètes. Votre soutien aide à ajouter plus de certifications, plus de langues, et à garder chaque simulateur <strong>100% gratuit</strong>.",
+        b1:"Soutien individuel (café / don)",p1:"Individuel",
+        b2:"Parrainage et partenariat institutionnel",p2:"Institution",
+        b3:"Contribution générale à la mission",p3:"Mission",
+        tagline:"Propulsé par DigitalEdge • Simulateurs TI multilingues • A+, Network+, CCNA, AWS et plus",
+        built:"Créé par Herman Hall"
+      },
+      ht:{
+        kicker:"DigitalEdge • Konsòl Sipò",
+        pill_live:"An dirèk",pill_free:"Aksè gratis",
+        eyebrow:"Mondyal • Plizyè lang • Fòmasyon IT",
+        h1:"Sipòte DigitalEdge",
+        subk:"Plis lang • Plis sètifikasyon • Plis aksè",
+        body:"DigitalEdge bay <strong>simulatè sètifikasyon IT gratis nan plizyè lang</strong> pou ede elèv, veteran, edikatè, ak kominote yo genyen konpetans mond reyèl. Sipò w ede ajoute plis sètifikasyon, plis lang, epi kenbe chak simulatè <strong>100% gratis</strong>.",
+        b1:"Sipò endividyèl (kafe / don)",p1:"Endividyèl",
+        b2:"Patwonaj ak patenarya enstitisyonèl",p2:"Enstitisyon",
+        b3:"Kontribisyon jeneral pou misyon an",p3:"Misyon",
+        tagline:"Pwopilse pa DigitalEdge • Simulatè IT plizyè lang • A+, Network+, CCNA, AWS ak plis",
+        built:"Bati pa Herman Hall"
+      }
+    };
+
+    function setLang(l){
+      document.documentElement.lang=l;
+      const d=I18N[l];
+      document.querySelectorAll('[data-i18n]').forEach(e=>{
+        const k=e.getAttribute('data-i18n');
+        if(d[k]!==undefined)e.innerHTML=d[k];
+      });
+      ['en','es','fr','ht'].forEach(code=>{
+        document.getElementById('btn-'+code).classList.toggle('active',l===code);
+      });
+      try{localStorage.setItem('de_lang',l)}catch(e){}
+    }
+
+    // restore language choice carried from the front door (or prior visit)
+    try{const saved=localStorage.getItem('de_lang');if(saved&&saved!=='en')setLang(saved);}catch(e){}
+  </script>
 </body>
 </html>
