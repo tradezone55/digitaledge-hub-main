@@ -56,6 +56,15 @@
   .enroll-strip a{color:var(--gold);border:1px solid rgba(255,195,40,.35);border-radius:999px;padding:7px 16px;
     letter-spacing:1.5px;text-decoration:none;transition:background .15s,color .15s;}
   .enroll-strip a:hover{background:var(--gold);color:#0a0a0a;}
+  .start-strip{margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 14px;}
+  .start-strip a{font-family:var(--mono);font-size:14px;letter-spacing:1.5px;border-radius:999px;padding:12px 22px;
+    text-decoration:none;transition:background .15s,color .15s,box-shadow .15s;}
+  .start-strip .s-try{background:var(--ember);color:#0a0a0a;font-weight:700;box-shadow:0 0 22px rgba(255,107,0,.35);}
+  .start-strip .s-try:hover{background:var(--ember-soft);box-shadow:0 0 30px rgba(255,107,0,.55);}
+  .start-strip .s-courses{color:var(--cyan);border:1px solid rgba(54,214,255,.45);}
+  .start-strip .s-courses:hover{background:var(--cyan);color:#0a0a0a;}
+  .start-strip .s-courses small{color:var(--dim);font-size:11px;letter-spacing:1px;margin-left:6px;}
+  .start-strip .s-courses:hover small{color:#0a0a0a;}
 
   .wrap{position:relative;z-index:2;width:min(1080px,94%);margin:0 auto}
   .path-eyebrow{text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--dim);margin:clamp(28px,5vw,44px) 0 16px}
@@ -126,6 +135,10 @@
   <h1 data-i18n="headline">Certifications</h1>
   <p class="cert-list" data-i18n="certList"><span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span></p>
   <p class="sub" data-i18n="subline">Interactive, multilingual training built by an active networking instructor.</p>
+  <div class="start-strip">
+    <a class="s-try" href="https://nexus.digitaledgeprep.com/try" target="_blank" rel="noopener" data-i18n="try_cta">TRY 10 FREE QUESTIONS →</a>
+    <a class="s-courses" href="https://nexus.digitaledgeprep.com/courses" target="_blank" rel="noopener" data-i18n="courses_cta">FULL COURSES <small>COMING SOON</small> →</a>
+  </div>
   <div class="stats">
     <span><b id="stat-count">…</b> <span data-i18n="stat1_l">learner visits</span></span>
     <span><b>6</b> <span data-i18n="stat2_l">certification tracks</span></span>
@@ -226,6 +239,7 @@
       enroll_q:"Enrolling someone else — or a whole class?",
       enroll_cta:"ENROLL SOMEONE →",
       cohort_cta:"ENROLL A WHOLE CLASS →",
+      try_cta:"TRY 10 FREE QUESTIONS →",courses_cta:"FULL COURSES <small>COMING SOON</small> →",
       foot:"Built by an active networking instructor · Prince George's Community College"
     },
     es:{
@@ -251,6 +265,7 @@
       enroll_q:"¿Inscribes a otra persona — o a una clase entera?",
       enroll_cta:"INSCRIBE A ALGUIEN →",
       cohort_cta:"INSCRIBE A UNA CLASE ENTERA →",
+      try_cta:"PRUEBA 10 PREGUNTAS GRATIS →",courses_cta:"CURSOS COMPLETOS <small>PRÓXIMAMENTE</small> →",
       foot:"Creado por un instructor activo de redes · Prince George's Community College"
     },
     fr:{
@@ -276,6 +291,7 @@
       enroll_q:"Vous inscrivez quelqu'un d'autre — ou toute une classe ?",
       enroll_cta:"INSCRIRE QUELQU'UN →",
       cohort_cta:"INSCRIRE UNE CLASSE ENTIÈRE →",
+      try_cta:"ESSAIE 10 QUESTIONS GRATUITES →",courses_cta:"COURS COMPLETS <small>BIENTÔT</small> →",
       foot:"Créé par un instructeur actif en réseautique · Prince George's Community College"
     },
     ht:{
@@ -301,6 +317,7 @@
       enroll_q:"W ap enskri yon lòt moun — oswa yon klas antye?",
       enroll_cta:"ENSKRI YON MOUN →",
       cohort_cta:"ENSKRI YON KLAS ANTYE →",
+      try_cta:"ESEYE 10 KESYON GRATIS →",courses_cta:"KOU KONPLÈ <small>BYENTO</small> →",
       foot:"Kreye pa yon enstriktè aktif nan rezo · Prince George's Community College"
     }
   };
