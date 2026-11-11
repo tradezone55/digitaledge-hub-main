@@ -1,0 +1,5 @@
+# One canonical host for SEO: hub and www 301 to the bare domain.
+https://hub.digitaledgeprep.com/*  https://digitaledgeprep.com/:splat  301!
+http://hub.digitaledgeprep.com/*   https://digitaledgeprep.com/:splat  301!
+https://www.digitaledgeprep.com/*  https://digitaledgeprep.com/:splat  301!
+http://www.digitaledgeprep.com/*   https://digitaledgeprep.com/:splat  301!
