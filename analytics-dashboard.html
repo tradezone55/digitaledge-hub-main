@@ -23,8 +23,8 @@
   <div class="container">
     <h1>📊 Real-Time Analytics Dashboard</h1>
     <div class="btns">
-      <a class="btn" href="https://hub.digitaledgeprep.com/" target="_blank">🏠 Open Hub</a>
-      <a class="btn" href="https://hub.digitaledgeprep.com/.netlify/functions/visitorCount" target="_blank">🧪 Test Function</a>
+      <a class="btn" href="https://digitaledgeprep.com/" target="_blank">🏠 Open Hub</a>
+      <a class="btn" href="/.netlify/functions/visitorCount" target="_blank">🧪 Test Function</a>
     </div>
     <div class="grid">
       <div class="card">
@@ -35,7 +35,7 @@
     </div>
   </div>
   <script>
-    const FN = 'https://hub.digitaledgeprep.com/.netlify/functions/visitorCount';
+    const FN = '/.netlify/functions/visitorCount';
     function refresh(){
       fetch(FN)
         .then(r=>r.json())
