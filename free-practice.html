@@ -76,7 +76,7 @@
   .tool .t-desc{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.3px}
   .tool .t-go{font-family:var(--mono);font-size:12px;color:var(--cyan)}
 
-  /* honest tutor invite — bottom, after the free world */
+  /* honest course invite — bottom, after the free world */
   .invite{position:relative;z-index:2;margin:clamp(34px,6vw,56px) 0 0;border:1px solid var(--line);border-radius:16px;
     padding:clamp(22px,3.5vw,34px);display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;
     background:linear-gradient(180deg,rgba(54,214,255,.06),transparent),linear-gradient(180deg,var(--panel-2),var(--panel));}
@@ -189,12 +189,12 @@
   <!-- honest invite, never a gate -->
   <section class="invite">
     <div class="it-text">
-      <div class="it-call">TUTOR COMMAND</div>
-      <h3 data-i18n="inv_h">Want the guided version?</h3>
-      <p data-i18n="inv_p">The Full Tutor walks you through all six tracks, five layers per module, and answers your questions when you get stuck. Free practice stays free — this is here whenever you want more.</p>
+      <div class="it-call">CERTPREP</div>
+      <h3 data-i18n="inv_h">Want the full course?</h3>
+      <p data-i18n="inv_p">CertPrep courses cover every exam objective, with a lesson and practice questions for each one. Free practice stays free — this is here whenever you want more.</p>
     </div>
-    <a class="it-cta" href="https://tutor.digitaledgeprep.com" target="_blank" rel="noopener">
-      <span data-i18n="inv_cta">Enter TUTOR COMMAND</span>
+    <a class="it-cta" href="https://nexus.digitaledgeprep.com/courses">
+      <span data-i18n="inv_cta">See the courses</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
   </section>
@@ -220,9 +220,9 @@
       c_awssaa:"Associate-level domain-based practice.",c_ccna:"Full exam with review and history.",
       c_py:"Fundamentals through functions — exam practice.",
       t_vlsm:"Subnetting, visualized",t_osi:"Master the 7 layers",t_quiz:"Hardware & software reps",
-      inv_h:"Want the guided version?",
-      inv_p:"The Full Tutor walks you through all six tracks, five layers per module, and answers your questions when you get stuck. Free practice stays free — this is here whenever you want more.",
-      inv_cta:"Enter TUTOR COMMAND",
+      inv_h:"Want the full course?",
+      inv_p:"CertPrep courses cover every exam objective, with a lesson and practice questions for each one. Free practice stays free — this is here whenever you want more.",
+      inv_cta:"See the courses",
       foot:"Built by an active networking instructor · Prince George's Community College"
     },
     es:{
@@ -237,9 +237,9 @@
       c_awssaa:"Práctica por dominio de nivel Associate.",c_ccna:"Examen completo con repaso e historial.",
       c_py:"Desde fundamentos hasta funciones — práctica de examen.",
       t_vlsm:"Subredes, visualizadas",t_osi:"Domina las 7 capas",t_quiz:"Repasos de hardware y software",
-      inv_h:"¿Quieres la versión guiada?",
-      inv_p:"El Tutor Completo te guía por las seis pistas, cinco capas por módulo, y responde tus preguntas cuando te atascas. La práctica gratuita sigue siendo gratis — esto está aquí cuando quieras más.",
-      inv_cta:"Entrar a TUTOR COMMAND",
+      inv_h:"¿Quieres el curso completo?",
+      inv_p:"Los cursos CertPrep cubren cada objetivo del examen, con una lección y preguntas de práctica para cada uno. La práctica gratuita sigue siendo gratis — esto está aquí cuando quieras más.",
+      inv_cta:"Ver los cursos",
       foot:"Creado por un instructor activo de redes · Prince George's Community College"
     }
   };
@@ -281,7 +281,7 @@
       });
     });
     document.querySelectorAll('.it-cta').forEach(btn=>{
-      btn.addEventListener('click',()=>logLaunch('TUTOR COMMAND (invite)'));
+      btn.addEventListener('click',()=>logLaunch('CERTPREP COURSES (invite)'));
     });
   })();
 </script>

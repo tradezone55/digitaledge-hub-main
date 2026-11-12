@@ -7,8 +7,8 @@ Branch: `main`. Do not touch unrelated DigitalEdge repos.
 
 | File | Role |
 |---|---|
-| `index.html` | Single canonical front door — Flight Deck chooser with two equal doors (Free Practice / Full Tutor) |
-| `free-practice.html` | Free hub — practice system cards + study tools + honest tutor invite |
+| `index.html` | Single canonical front door — Flight Deck chooser with doors (Free Practice / CertPrep Courses / Premier Pro) |
+| `free-practice.html` | Free hub — practice system cards + study tools + honest CertPrep course invite |
 | `about.html` | About page (linked from chooser nav) |
 | `support.html` | Support page (linked from chooser nav) |
 | `analytics-dashboard.html` | Counter dashboard — feeds from the visitor counter Apps Script; do not break |
@@ -32,7 +32,7 @@ The counter returns `{status:"success", totalVisits: N}`. The analytics endpoint
 ## Rules for adding things
 
 - **New cert practice sim** → add a card to `free-practice.html`. Keep it in the Practice Systems grid.
-- **New tutor track** → belongs inside TUTOR COMMAND (`tutor.digitaledgeprep.com`), not a card here.
+- Tutor Command was retired 2026-11-12; tutor.digitaledgeprep.com redirects to nexus. Courses live at nexus `/courses`.
 - **Different kind of product** (teacher tools, academic/partner work) → its own door on the chooser
   (`index.html`), not a card in the free hub.
 - **Past ~12 practice cards** → group the `free-practice.html` grid by vendor section:
