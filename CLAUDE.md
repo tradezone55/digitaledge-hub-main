@@ -7,7 +7,7 @@ Branch: `main`. Do not touch unrelated DigitalEdge repos.
 
 | File | Role |
 |---|---|
-| `index.html` | Single canonical front door — Flight Deck chooser with doors (Free Practice / CertPrep Courses / Premier Pro) |
+| `index.html` | Single canonical front door — Flight Deck chooser with doors (Free Practice / CertPrep Courses / Premier) |
 | `free-practice.html` | Free hub — practice system cards + study tools + honest CertPrep course invite |
 | `about.html` | About page (linked from chooser nav) |
 | `support.html` | Support page (linked from chooser nav) |
