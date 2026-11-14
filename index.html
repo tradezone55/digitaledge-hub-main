@@ -3,216 +3,266 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DigitalEdge — Pass your IT certification, faster</title>
+<title>DigitalEdge: Pass your IT certification</title>
 <link rel="canonical" href="https://digitaledgeprep.com/" />
-<meta name="description" content="Free IT certification practice and full certification courses — multilingual (EN/ES/FR/HT), built by an active networking instructor. A+, Network+, Security+, AWS, CCNA, Python." />
+<meta name="description" content="Full IT certification courses, Premier adaptive practice exams and free practice for A+, Network+, CCNA, Security+, Python and AWS. Multilingual (EN/ES/FR/HT), built by an active networking instructor." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Chakra+Petch:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0b0e;--bg-2:#0d0f14;--panel:#12141a;--panel-2:#171a22;--line:#252a35;
-    --ember:#ff6b00;--ember-soft:#ff8a3d;--cyan:#36d6ff;--cyan-soft:#7fe6ff;--gold:#ffc328;--green:#44dd44;
-    --fg:#e8eaed;--muted:#a6b0c3;--dim:#7d879c;
-    --display:'Orbitron',sans-serif;--body:'Chakra Petch',sans-serif;--mono:'Share Tech Mono',monospace;
+    --ground:#0A0820;--panel:#110E2C;--chip:#16123A;--line:#2B2760;
+    --accent:#FF2D95;--accent-fill:#DB1478;--pink-ink:#FF6FB5;--cyan:#3FD0FF;--cyan-soft:#7FE0FF;--violet:#8A4DFF;--blue:#2E8BFF;
+    --ink:#FFFFFF;--fg:#EDEBFF;--soft:#DCD8F7;--dim:#C9C4F0;
+    --display:'Unbounded',sans-serif;--body:'Chakra Petch',sans-serif;--mono:'Martian Mono',monospace;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.55;
+  body{margin:0;background-color:var(--ground);color:var(--fg);font-family:var(--body);line-height:1.55;
     -webkit-font-smoothing:antialiased;overflow-x:hidden;
-    background-image:radial-gradient(900px 480px at 50% -8%,rgba(255,107,0,.10),transparent 62%),radial-gradient(620px 380px at 110% 8%,rgba(54,214,255,.06),transparent 60%);}
-  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.35;
-    background:repeating-linear-gradient(to bottom,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;}
-  a{color:inherit;text-decoration:none}
+    background-image:radial-gradient(rgba(127,224,255,.13) 1px,transparent 1.4px);background-size:22px 22px}
+  a{color:var(--cyan-soft)}
+  a:hover{color:var(--ink)}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 
-  .nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
-    padding:14px clamp(16px,4vw,42px);background:rgba(10,11,14,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
-  .brand{display:flex;align-items:center;gap:11px}
-  .brand svg{width:24px;height:24px;color:var(--ember);filter:drop-shadow(0 0 8px rgba(255,107,0,.55))}
-  .brand .name{font-family:var(--display);font-weight:900;letter-spacing:1px;font-size:18px}
-  .brand .name .edge{color:var(--ember)}
-  .nav-right{display:flex;align-items:center;gap:clamp(14px,3vw,26px)}
-  .nav-right a{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.5px}
-  .nav-right a:hover{color:var(--fg)}
-  .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:12px;}
-  .lang button{background:transparent;border:0;color:var(--dim);padding:6px 12px;cursor:pointer;letter-spacing:.5px;transition:.18s;}
-  .lang button.active{background:var(--ember);color:#0a0a0a;font-weight:700}
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(10,8,32,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  .brand span{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.08em}
+  .links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500}
+  .links a{text-decoration:none}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:12px}
+  .lang button{background:transparent;border:0;color:var(--dim);padding:8px 11px;cursor:pointer;min-height:36px}
+  .lang button.active{background:var(--accent-fill);color:var(--ink);font-weight:500}
+  .signin{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1.5px solid var(--cyan);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}
 
-  .hero{position:relative;z-index:2;text-align:center;padding:clamp(46px,8vw,86px) clamp(18px,5vw,24px) clamp(10px,3vw,20px)}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--cyan);opacity:.85;margin-bottom:18px}
-  .hero h1{font-family:var(--display);font-weight:900;letter-spacing:.5px;margin:0 auto;max-width:16ch;
-    font-size:clamp(30px,6vw,60px);line-height:1.06;text-shadow:0 0 28px rgba(255,107,0,.28);}
-  .hero h1 .em{color:var(--ember)}
-  .cert-list{font-family:var(--display);font-weight:900;letter-spacing:.5px;
-    font-size:clamp(18px,2.8vw,26px);margin:14px auto 0;max-width:44ch}
-  .cert-list span{margin:0 6px}
-  .cert-list .c-green{color:var(--green)}
-  .cert-list .c-orange{color:var(--ember)}
-  .hero .sub{max-width:54ch;margin:20px auto 0;color:var(--muted);font-size:clamp(15px,2.2vw,19px)}
-  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:26px;
-    font-family:var(--mono);font-size:13px;color:var(--dim);letter-spacing:.5px;}
-  .stats b{color:var(--cyan);font-weight:400}
-  .enroll-strip{margin-top:24px;font-family:var(--mono);font-size:13px;letter-spacing:.5px;color:var(--dim);
-    display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 14px;}
-  .enroll-strip a{color:var(--gold);border:1px solid rgba(255,195,40,.35);border-radius:999px;padding:7px 16px;
-    letter-spacing:1.5px;text-decoration:none;transition:background .15s,color .15s;}
-  .enroll-strip a:hover{background:var(--gold);color:#0a0a0a;}
-  .start-strip{margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 14px;}
-  .start-strip a{font-family:var(--mono);font-size:14px;letter-spacing:1.5px;border-radius:999px;padding:12px 22px;
-    text-decoration:none;transition:background .15s,color .15s,box-shadow .15s;}
-  .start-strip .s-try{background:var(--ember);color:#0a0a0a;font-weight:700;box-shadow:0 0 22px rgba(255,107,0,.35);}
-  .start-strip .s-try:hover{background:var(--ember-soft);box-shadow:0 0 30px rgba(255,107,0,.55);}
-  .start-strip .s-courses{color:var(--cyan);border:1px solid rgba(54,214,255,.45);}
-  .start-strip .s-courses:hover{background:var(--cyan);color:#0a0a0a;}
-  .start-strip .s-courses small{color:var(--dim);font-size:11px;letter-spacing:1px;margin-left:6px;}
-  .start-strip .s-courses:hover small{color:#0a0a0a;}
+  /* hero */
+  .hero{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-top:64px;padding-bottom:56px}
+  .hero-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:22px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--cyan-soft)}
+  h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(36px,5vw,54px);line-height:1.05;color:var(--ink)}
+  h1 .em{color:var(--accent);display:block}
+  .sub{margin:0;font-size:clamp(17px,2vw,20px);line-height:1.5;color:var(--soft);max-width:640px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chips span{padding:7px 14px;border-radius:8px;background:var(--chip);border:1px solid var(--blue);box-shadow:0 0 14px rgba(46,139,255,.35);font-family:var(--mono);font-size:13px;color:var(--ink)}
+  .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 28px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;color:var(--ink)}
+  .btn-fill{background:var(--accent-fill);box-shadow:0 0 26px rgba(255,45,149,.45)}
+  .btn-fill:hover{box-shadow:0 0 34px rgba(255,45,149,.65);color:var(--ink)}
+  .btn-line{border:1.5px solid var(--cyan)}
+  .stats{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+  .stats b{color:var(--cyan-soft);font-weight:500}
 
-  .wrap{position:relative;z-index:2;width:min(1080px,94%);margin:0 auto}
-  .path-eyebrow{text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--dim);margin:clamp(28px,5vw,44px) 0 16px}
+  /* sphere */
+  .sphere-col{flex:1 1 400px;min-width:0;display:flex;justify-content:center}
+  /* leave 32px each side for the orbiting bubbles */
+  .sphere{position:relative;width:min(460px,calc(100% - 64px));aspect-ratio:1;margin:32px 0}
+  .ring{position:absolute;border-radius:50%;border:1px solid rgba(63,208,255,.35)}
+  .r1{inset:9%}
+  .r2{inset:19%;border:1.5px dashed rgba(255,45,149,.45);animation:spin 50s linear infinite}
+  .orb{position:absolute;inset:29%;border-radius:50%;background:radial-gradient(circle at 38% 34%,#7FE0FF 0%,#2E8BFF 16%,#4A1040 46%,#140F33 70%,#0A0820 82%);box-shadow:0 0 60px rgba(63,208,255,.45),0 0 120px rgba(255,45,149,.3),inset 0 0 50px rgba(0,0,0,.85);animation:pulse 4s ease-in-out infinite}
+  .codes{position:absolute;inset:29%}
+  .codes span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500;font-size:18px;color:var(--ink);text-shadow:0 0 12px var(--accent),0 0 26px var(--accent);opacity:0;animation:code 28s infinite}
+  .codes .c1{animation-delay:4s}.codes .c2{animation-delay:8s}.codes .c3{animation-delay:12s}.codes .c4{animation-delay:16s}.codes .c5{animation-delay:20s}.codes .c6{animation-delay:24s}
+  .orbit{position:absolute;inset:0;animation:spin 70s linear infinite}
+  .bub{position:absolute;transform:translate(-50%,-50%)}
+  .bub span{display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:var(--ground);border:2px solid var(--cyan);box-shadow:0 0 18px rgba(63,208,255,.6);font-family:var(--mono);font-size:11px;color:var(--ink);animation:spin 70s linear infinite reverse}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pulse{50%{box-shadow:0 0 80px rgba(63,208,255,.6),0 0 150px rgba(255,45,149,.4),inset 0 0 50px rgba(0,0,0,.85)}}
+  @keyframes code{0%{opacity:0;transform:scale(.6)}3%{opacity:1;transform:scale(1)}11%{opacity:1;transform:scale(1)}13.5%{opacity:0;transform:scale(.6)}100%{opacity:0}}
 
-  /* ===== three equal doors ===== */
-  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;margin-bottom:clamp(30px,5vw,50px)}
-  .door{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;
-    padding:clamp(26px,4vw,40px);overflow:hidden;transition:.2s;
-    background:linear-gradient(180deg,var(--panel-2),var(--panel));}
-  .door::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--ac);opacity:.7}
-  .door.free{--ac:var(--ember)}
-  .door.tutor{--ac:var(--cyan)}
-  .door.premier{--ac:var(--gold)}
-  .door:hover{transform:translateY(-3px);border-color:#39414f;box-shadow:0 22px 54px -28px rgba(0,0,0,.9)}
-  .door:hover::before{opacity:1}
-  .d-badge{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:#0a0a0a;
-    background:var(--ac);border-radius:7px;padding:5px 11px;font-weight:700;margin-bottom:16px;
-    box-shadow:0 0 16px -4px var(--ac)}
-  .d-call{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--ac);margin-bottom:4px}
-  .door h2{font-family:var(--display);font-weight:900;font-size:clamp(22px,3.4vw,32px);margin:2px 0 12px;line-height:1.05}
-  .door p{color:var(--muted);margin:0 0 18px;font-size:16px}
-  .d-meta{font-family:var(--mono);font-size:13.5px;color:var(--muted);letter-spacing:.4px;margin:0 0 24px;
-    display:flex;flex-direction:column;gap:7px}
-  .d-meta span{display:flex;align-items:center;gap:9px}
-  .d-meta span::before{content:"▸";color:var(--ac)}
-  .d-cta{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;
-    font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.5px;color:#0a0a0a;background:var(--ac);
-    padding:14px;border-radius:11px;transition:.2s;box-shadow:0 0 22px -6px var(--ac)}
-  .d-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
-  .door.premier .d-cta{background:linear-gradient(135deg,#ffd24a,#f5a300)}
-  .d-cta.soon{opacity:.45;cursor:default;pointer-events:none}
-  .d-cta svg{width:16px;height:16px}
+  .wire{height:2px;max-width:1000px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--cyan) 20%,var(--accent) 80%,transparent)}
 
-  footer{position:relative;z-index:2;text-align:center;padding:clamp(40px,7vw,72px) 18px clamp(40px,6vw,60px)}
+  /* plans */
+  .plans{padding-top:56px}
+  .center-eyebrow{text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--cyan-soft);margin-bottom:10px}
+  .plans h2{margin:0 0 30px;text-align:center;font-family:var(--display);font-weight:700;font-size:34px;color:var(--ink)}
+  .plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:980px;margin:0 auto}
+  .card{padding:32px;border-radius:18px;display:flex;flex-direction:column;gap:14px}
+  .card-course{background:var(--panel);border:1px solid var(--cyan)}
+  .card-premier{background:linear-gradient(150deg,#2A0F5C 0%,#4A1040 55%,#14123A 100%);border:1.5px solid var(--accent);box-shadow:0 0 40px rgba(255,45,149,.25)}
+  .tag{align-self:flex-start;padding:5px 11px;border-radius:6px;font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+  .tag-cyan{background:#0E2A3A;color:var(--cyan-soft)}
+  .tag-pink{background:var(--accent-fill);color:var(--ink)}
+  .card h3{margin:0;font-family:var(--display);font-weight:700;font-size:24px;color:var(--ink)}
+  .card p{margin:0;font-size:16px;line-height:1.55;color:var(--soft)}
+  .card-premier p{color:var(--fg)}
+  .card ul{margin:0;padding-left:18px;font-size:15px;line-height:1.8;color:var(--fg)}
+  .price{margin-top:auto;padding-top:10px}
+  .price b{font-family:var(--display);font-size:26px;color:var(--ink);font-weight:700}
+  .price span{font-size:14px;color:var(--dim)}
+  .card-premier .price span{color:#F3C6DD}
+  .soon{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--pink-ink)}
+
+  /* free */
+  .free{margin:64px auto 0;padding:36px 32px;border-radius:20px;background:#0D0B26;border:1px solid var(--cyan);box-shadow:0 0 40px rgba(63,208,255,.12)}
+  .free-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-bottom:26px}
+  .free-head > div{display:flex;flex-direction:column;gap:8px}
+  .free h2{margin:0;font-family:var(--display);font-weight:700;font-size:28px;color:var(--ink)}
+  .free-head p{margin:0;font-size:16px;color:var(--soft);max-width:640px}
+  .free-lang{font-family:var(--mono);font-size:12px;color:var(--dim)}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .tile{padding:20px;border-radius:14px;background:var(--chip);border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
+  .tile:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .tile .code{font-family:var(--mono);font-size:11px;color:var(--cyan-soft)}
+  .tile .name{font-family:var(--display);font-size:18px;color:var(--ink)}
+  .tile .go{font-size:14px;color:var(--pink-ink);font-weight:600;margin-top:6px}
+  .tile-tools{background:transparent;border:1px dashed var(--cyan)}
+  .tile-tools .go{color:var(--cyan-soft)}
+
+  .enroll{margin:20px auto 0;padding:24px 28px;border-radius:16px;background:var(--panel);border:1px dashed var(--cyan);display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+  .enroll span{font-size:16px;color:var(--ink);font-weight:600}
+  .enroll a{font-weight:700;font-family:var(--mono);font-size:13px;text-decoration:none}
+
+  /* footer + signature badge (keep exactly) */
+  footer{text-align:center;padding:56px 18px 48px}
   .sig-wrap{display:inline-block;padding:2px;border-radius:999px;background:linear-gradient(90deg,#ff4444,#ff8800,#44dd44)}
   .sig-inner{background:#0a0a0f;border-radius:999px;padding:11px 30px}
   .sig-inner span{font-family:var(--body);font-weight:700;letter-spacing:.6px;font-size:14px;
     background:linear-gradient(to right,#fb923c,#f87171,#4ade80);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .foot-note{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.5px}
+  .foot-note{margin-top:18px;font-size:14px;color:var(--dim)}
 
-  @media (max-width:900px){ .doors{grid-template-columns:1fr 1fr} }
-  @media (max-width:560px){ .doors{grid-template-columns:1fr} }
-  @media (max-width:520px){
-    .nav{flex-wrap:wrap;row-gap:10px;padding:12px 16px}
-    .nav-right{width:100%;justify-content:flex-start;gap:16px}
-    .nav-right .lang{margin-left:auto}
-    .lang button{padding:6px 11px}
-  }
-  @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} html{scroll-behavior:auto} }
   :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+  @media (max-width:860px){ .links{display:none} .nav-right{margin-left:auto} }
+  @media (max-width:520px){ .free{padding:28px 18px} .card{padding:26px} .nav-right{width:100%;justify-content:space-between} }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important} html{scroll-behavior:auto}
+    .codes .c0{opacity:1}
+  }
 </style>
 </head>
 <body>
 
 <header class="nav">
-  <div class="brand">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l3.5 6h6.5l-5.2 3.8 2 6.2L12 16l-6.8 2.9 2-6.2L2 8h6.5L12 2z"/></svg>
-    <span class="name">DIGITAL<span class="edge">EDGE</span></span>
-  </div>
-  <nav class="nav-right">
-    <a href="about.html" data-i18n="nav_about">About</a>
-    <a href="support.html" data-i18n="nav_support">Support</a>
-    <div class="lang" role="group" aria-label="Language">
-      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
-      <button id="btn-es" onclick="setLang('es')">ES</button>
-      <button id="btn-fr" onclick="setLang('fr')">FR</button>
-      <button id="btn-ht" onclick="setLang('ht')">HT</button>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="DigitalEdge home">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#FF2D95" stroke-width="2.4"/><polygon points="17,10 23.5,13.7 23.5,20.3 17,24 10.5,20.3 10.5,13.7" fill="#3FD0FF"/></svg>
+      <span>DIGITALEDGE</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#plans" data-i18n="nav_plans">Courses and plans</a>
+      <a href="#free" data-i18n="nav_free">Free practice</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="support.html" data-i18n="nav_support">Support</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="btn-en" class="active" aria-pressed="true" onclick="setLang('en')">EN</button>
+        <button type="button" id="btn-es" aria-pressed="false" onclick="setLang('es')">ES</button>
+        <button type="button" id="btn-fr" aria-pressed="false" onclick="setLang('fr')">FR</button>
+        <button type="button" id="btn-ht" aria-pressed="false" onclick="setLang('ht')">HT</button>
+      </div>
+      <a class="signin" href="https://nexus.digitaledgeprep.com/portal" data-i18n="nav_signin">Sign in</a>
     </div>
-  </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="eyebrow" data-i18n="eyebrow">DIGITALEDGE LEARNING SYSTEMS</div>
-  <h1 data-i18n="headline">Certifications</h1>
-  <p class="cert-list" data-i18n="certList"><span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span></p>
-  <p class="sub" data-i18n="subline">Interactive, multilingual training built by an active networking instructor.</p>
-  <div class="start-strip">
-    <a class="s-try" href="https://nexus.digitaledgeprep.com/try" target="_blank" rel="noopener" data-i18n="try_cta">TRY 10 FREE QUESTIONS →</a>
-    <a class="s-courses" href="https://nexus.digitaledgeprep.com/courses" target="_blank" rel="noopener" data-i18n="courses_cta">FULL COURSES <small>COMING SOON</small> →</a>
-  </div>
-  <div class="stats">
-    <span><b id="stat-count">…</b> <span data-i18n="stat1_l">learner visits</span></span>
-    <span><b>6</b> <span data-i18n="stat2_l">certification tracks</span></span>
-    <span><b>EN / ES / FR / HT</b> <span data-i18n="stat3_l">multilingual</span></span>
-  </div>
-  <div class="enroll-strip">
-    <span data-i18n="enroll_q">Enrolling someone else — or a whole class?</span>
-    <a href="https://nexus.digitaledgeprep.com/enroll/sponsor" target="_blank" rel="noopener" data-i18n="enroll_cta">ENROLL SOMEONE →</a>
-    <a href="https://nexus.digitaledgeprep.com/enroll/institutions" target="_blank" rel="noopener" data-i18n="cohort_cta">ENROLL A WHOLE CLASS →</a>
-  </div>
-</section>
-
-<main class="wrap">
-  <div class="path-eyebrow" data-i18n="path">THREE WAYS IN — PICK YOURS</div>
-  <section class="doors">
-
-    <!-- FREE (left, ember, reads first) -->
-    <article class="door free">
-      <span class="d-badge" data-i18n="free_badge">FREE · NO LOGIN</span>
-      <div class="d-call" data-i18n="free_call">PRACTICE SYSTEMS</div>
-      <h2 data-i18n="free_h">Free Practice</h2>
-      <p data-i18n="free_p">The practice systems thousands already use — exam sims, quizzes, and study tools. Open, free, no sign-up.</p>
-      <div class="d-meta">
-        <span data-i18n="free_m1">7 exam practice systems</span>
-        <span data-i18n="free_m2">VLSM &amp; OSI study tools</span>
-        <span data-i18n="free_m3">Languages · EN / ES</span>
+<main>
+  <section class="wrap hero">
+    <div class="hero-text">
+      <div class="eyebrow">DIGITALEDGE LEARNING SYSTEMS</div>
+      <h1><span data-i18n="h1a">Pass your IT certification.</span> <span class="em" data-i18n="h1b">Learn it for real.</span></h1>
+      <p class="sub" data-i18n="subline">Interactive, multilingual training for anyone: on your own, sponsored by an employer, or with your whole class. Built by an active networking instructor.</p>
+      <div class="chips">
+        <span>A+ Core 1</span><span>A+ Core 2</span><span>Network+</span><span>CCNA</span><span>Security+</span><span>Python PCEP</span><span>AWS Cloud Practitioner</span>
       </div>
-      <a class="d-cta" href="free-practice.html">
-        <span data-i18n="free_cta">Open Free Practice</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </article>
-
-    <!-- CERTPREP COURSES (right, cyan, equal weight) -->
-    <article class="door tutor">
-      <span class="d-badge" data-i18n="tutor_badge">FULL COURSES</span>
-      <div class="d-call">CERTPREP</div>
-      <h2 data-i18n="tutor_h">CertPrep Courses</h2>
-      <p data-i18n="tutor_p">Complete study material for every exam objective: a lesson, then practice questions after each one, plus full-length practice exams.</p>
-      <div class="d-meta">
-        <span data-i18n="tutor_m1">7 certification tracks</span>
-        <span data-i18n="tutor_m2">Every exam objective</span>
-        <span data-i18n="tutor_m3">Opening soon</span>
+      <div class="ctas">
+        <a class="btn btn-fill" href="https://nexus.digitaledgeprep.com/try" data-i18n="try_cta">Try 10 free questions</a>
+        <a class="btn btn-line" href="#plans" data-i18n="pick_cta">Pick a course</a>
       </div>
-      <a class="d-cta" href="https://nexus.digitaledgeprep.com/courses">
-        <span data-i18n="tutor_cta">See the courses</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </article>
-
-    <!-- PREMIER (third, gold) -->
-    <article class="door premier">
-      <span class="d-badge" data-i18n="premier_badge">PREMIER · PRO</span>
-      <div class="d-call" data-i18n="premier_call">COMMAND CENTER</div>
-      <h2 data-i18n="premier_h">Premier</h2>
-      <p data-i18n="premier_p">AI-guided certification command center. Track every session, measure your improvement, set your certification date, and follow a personalized roadmap to exam success.</p>
-      <div class="d-meta">
-        <span data-i18n="premier_m1">Session tracking &amp; analytics</span>
-        <span data-i18n="premier_m2">Set your certification date</span>
-        <span data-i18n="premier_m3">Personalized exam roadmap</span>
+      <div class="stats">
+        <span><b id="stat-count">…</b> <span data-i18n="stat1_l">learner visits</span></span>
+        <span data-i18n="stat2_l">7 certification tracks</span>
+        <span>EN · ES · FR · HT</span>
       </div>
-      <a class="d-cta" href="https://nexus.digitaledgeprep.com" target="_blank" rel="noopener">
-        <span data-i18n="premier_cta">Enter PREMIER</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </article>
+    </div>
+    <div class="sphere-col" aria-hidden="true">
+      <div class="sphere">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="orb"></div>
+        <div class="codes">
+          <span class="c0">220-1201</span><span class="c1">220-1202</span><span class="c2">N10-009</span><span class="c3">200-301</span><span class="c4">SY0-801</span><span class="c5">PCEP-30-02</span><span class="c6">CLF-C02</span>
+        </div>
+        <div class="orbit">
+          <div class="bub" style="left:50%;top:4%"><span>A+ 1</span></div>
+          <div class="bub" style="left:86%;top:21.3%"><span>A+ 2</span></div>
+          <div class="bub" style="left:94.8%;top:60.3%"><span>NET+</span></div>
+          <div class="bub" style="left:70%;top:91.4%"><span>CCNA</span></div>
+          <div class="bub" style="left:30%;top:91.4%"><span>SEC+</span></div>
+          <div class="bub" style="left:5.2%;top:60.3%"><span>PY</span></div>
+          <div class="bub" style="left:14%;top:21.3%"><span>AWS</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <div class="wire" aria-hidden="true"></div>
+
+  <section id="plans" class="wrap plans">
+    <div class="center-eyebrow" data-i18n="plans_eyebrow">ONE PLATFORM. TWO WAYS TO STUDY.</div>
+    <h2>CertPrep</h2>
+    <div class="plan-grid">
+      <article class="card card-course">
+        <span class="tag tag-cyan" data-i18n="cp_badge">ONE COURSE</span>
+        <h3 data-i18n="cp_h">Course Pass</h3>
+        <p data-i18n="cp_p">Pick one certification and learn every exam objective: a lesson, then practice questions after each one.</p>
+        <ul>
+          <li data-i18n="cp_m1">One course of your choice</li>
+          <li data-i18n="cp_m2">Every exam objective covered</li>
+          <li data-i18n="cp_m3">Progress tracking and certificate</li>
+          <li data-i18n="cp_m4">Course content in English</li>
+        </ul>
+        <div class="price"><b>$79</b> <span data-i18n="cp_price">one time · 90 days</span></div>
+        <span class="soon" data-i18n="cp_soon">ENROLLMENT OPENS SOON</span>
+        <a class="btn btn-line" href="https://nexus.digitaledgeprep.com/courses" data-i18n="cp_cta">Choose a course</a>
+      </article>
+
+      <article class="card card-premier">
+        <span class="tag tag-pink" data-i18n="pr_badge">ALL ACCESS</span>
+        <h3>Premier</h3>
+        <p data-i18n="pr_p">Every course, plus the adaptive exam engine that tells you when you are ready.</p>
+        <ul>
+          <li data-i18n="pr_m1">All 7 courses included (in English)</li>
+          <li data-i18n="pr_m2">Adaptive practice exams</li>
+          <li data-i18n="pr_m3">Pass prediction, exam date, roadmap</li>
+          <li data-i18n="pr_m4">Exams in EN, ES, FR, HT</li>
+        </ul>
+        <div class="price"><b>$50</b> <span data-i18n="pr_price">per month · no auto-renewal</span></div>
+        <a class="btn btn-fill" href="https://nexus.digitaledgeprep.com/#pricing" data-i18n="pr_cta">Go Premier</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div id="free" class="free">
+      <div class="free-head">
+        <div>
+          <span class="tag tag-cyan" data-i18n="free_badge">FREE · NO SIGN-UP</span>
+          <h2 data-i18n="free_h">Free Practice</h2>
+          <p data-i18n="free_p">Exam simulators and quizzes that thousands already use. Pick your exam and start now.</p>
+        </div>
+        <span class="free-lang" data-i18n="free_lang">English · Spanish</span>
+      </div>
+      <div class="tiles">
+        <a class="tile" href="https://aplus.digitaledgeprep.com"><span class="code">220-1201 / 1202</span><span class="name">CompTIA A+</span><span class="go" data-i18n="free_go">Start practicing →</span></a>
+        <a class="tile" href="https://network-mastery.digitaledgeprep.com"><span class="code">N10-009</span><span class="name">Network+</span><span class="go" data-i18n="free_go">Start practicing →</span></a>
+        <a class="tile" href="https://ccna.digitaledgeprep.com"><span class="code">200-301</span><span class="name">Cisco CCNA</span><span class="go" data-i18n="free_go">Start practicing →</span></a>
+        <a class="tile" href="https://securityplus.digitaledgeprep.com"><span class="code">SY0-701</span><span class="name">Security+</span><span class="go" data-i18n="free_go">Start practicing →</span></a>
+        <a class="tile" href="https://aws.digitaledgeprep.com"><span class="code">CLF-C02</span><span class="name">AWS Cloud Practitioner</span><span class="go" data-i18n="free_go">Start practicing →</span></a>
+        <a class="tile" href="https://aws-saa.digitaledgeprep.com"><span class="code">SAA-C03</span><span class="name">AWS Solutions Architect</span><span class="go" data-i18n="free_go">Start practicing →</span></a>
+        <a class="tile" href="https://free.python.digitaledgeprep.com"><span class="code">PCEP-30-02</span><span class="name">Python</span><span class="go" data-i18n="free_go">Start practicing →</span></a>
+        <a class="tile tile-tools" href="free-practice.html"><span class="code" data-i18n="tools_call">STUDY TOOLS</span><span class="name" data-i18n="tools_h">Flashcards, OSI, VLSM</span><span class="go" data-i18n="tools_go">See all tools →</span></a>
+      </div>
+    </div>
+
+    <div class="enroll">
+      <span data-i18n="enroll_q">Enrolling someone else, or a whole class?</span>
+      <a href="https://nexus.digitaledgeprep.com/enroll/sponsor" data-i18n="enroll_cta">ENROLL SOMEONE →</a>
+      <a href="https://nexus.digitaledgeprep.com/enroll/institutions" data-i18n="cohort_cta">ENROLL A WHOLE CLASS →</a>
+    </div>
   </section>
 </main>
 
@@ -224,126 +274,112 @@
 <script>
   const I18N={
     en:{
-      nav_about:"About",nav_support:"Support",
-      eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
-      headline:'Certifications',
-      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
-      subline:"Interactive, multilingual training built by an active networking instructor.",
-      stat1_l:"learner visits",stat2_l:"certification tracks",stat3_l:"multilingual",
-      path:"THREE WAYS IN — PICK YOURS",
-      free_badge:"FREE · NO LOGIN",free_call:"PRACTICE SYSTEMS",free_h:"Free Practice",
-      free_p:"The practice systems thousands already use — exam sims, quizzes, and study tools. Open, free, no sign-up.",
-      free_m1:"7 exam practice systems",free_m2:"VLSM & OSI study tools",free_m3:"Languages · EN / ES",
-      free_cta:"Open Free Practice",
-      tutor_badge:"FULL COURSES",tutor_h:"CertPrep Courses",
-      tutor_p:"Complete study material for every exam objective: a lesson, then practice questions after each one, plus full-length practice exams.",
-      tutor_m1:"7 certification tracks",tutor_m2:"Every exam objective",tutor_m3:"Opening soon",
-      tutor_cta:"See the courses",
-      premier_badge:"PREMIER · PRO",premier_call:"COMMAND CENTER",premier_h:"Premier",
-      premier_p:"AI-guided certification command center. Track every session, measure your improvement, set your certification date, and follow a personalized roadmap to exam success.",
-      premier_m1:"Session tracking & analytics",premier_m2:"Set your certification date",premier_m3:"Personalized exam roadmap",
-      premier_cta:"Enter PREMIER",
-      enroll_q:"Enrolling someone else — or a whole class?",
-      enroll_cta:"ENROLL SOMEONE →",
-      cohort_cta:"ENROLL A WHOLE CLASS →",
-      try_cta:"TRY 10 FREE QUESTIONS →",courses_cta:"FULL COURSES <small>COMING SOON</small> →",
+      nav_plans:"Courses and plans",nav_free:"Free practice",nav_about:"About",nav_support:"Support",nav_signin:"Sign in",
+      h1a:"Pass your IT certification.",h1b:"Learn it for real.",
+      subline:"Interactive, multilingual training for anyone: on your own, sponsored by an employer, or with your whole class. Built by an active networking instructor.",
+      try_cta:"Try 10 free questions",pick_cta:"Pick a course",
+      stat1_l:"learner visits",stat2_l:"7 certification tracks",
+      plans_eyebrow:"ONE PLATFORM. TWO WAYS TO STUDY.",
+      cp_badge:"ONE COURSE",cp_h:"Course Pass",
+      cp_p:"Pick one certification and learn every exam objective: a lesson, then practice questions after each one.",
+      cp_m1:"One course of your choice",cp_m2:"Every exam objective covered",cp_m3:"Progress tracking and certificate",cp_m4:"Course content in English",
+      cp_price:"one time · 90 days",cp_soon:"ENROLLMENT OPENS SOON",cp_cta:"Choose a course",
+      pr_badge:"ALL ACCESS",
+      pr_p:"Every course, plus the adaptive exam engine that tells you when you are ready.",
+      pr_m1:"All 7 courses included (in English)",pr_m2:"Adaptive practice exams",pr_m3:"Pass prediction, exam date, roadmap",pr_m4:"Exams in EN, ES, FR, HT",
+      pr_price:"per month · no auto-renewal",pr_cta:"Go Premier",
+      free_badge:"FREE · NO SIGN-UP",free_h:"Free Practice",
+      free_p:"Exam simulators and quizzes that thousands already use. Pick your exam and start now.",
+      free_lang:"English · Spanish",free_go:"Start practicing →",
+      tools_call:"STUDY TOOLS",tools_h:"Flashcards, OSI, VLSM",tools_go:"See all tools →",
+      enroll_q:"Enrolling someone else, or a whole class?",enroll_cta:"ENROLL SOMEONE →",cohort_cta:"ENROLL A WHOLE CLASS →",
       foot:"Built by an active networking instructor · Prince George's Community College"
     },
     es:{
-      nav_about:"Acerca de",nav_support:"Soporte",
-      eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
-      headline:'Certificaciones',
-      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
-      subline:"Entrenamiento interactivo y multilingüe creado por un instructor activo de redes.",
-      stat1_l:"visitas de estudio",stat2_l:"pistas de certificación",stat3_l:"multilingüe",
-      path:"TRES FORMAS DE EMPEZAR — ELIGE LA TUYA",
-      free_badge:"GRATIS · SIN CUENTA",free_call:"SISTEMAS DE PRÁCTICA",free_h:"Práctica Gratuita",
-      free_p:"Los sistemas de práctica que ya usan miles — simuladores de examen, cuestionarios y herramientas de estudio. Abierto, gratis, sin registro.",
-      free_m1:"7 sistemas de práctica de examen",free_m2:"Herramientas VLSM y OSI",free_m3:"Idiomas · EN / ES",
-      free_cta:"Abrir Práctica Gratuita",
-      tutor_badge:"CURSOS COMPLETOS",tutor_h:"Cursos CertPrep",
-      tutor_p:"Material de estudio completo para cada objetivo del examen: una lección, luego preguntas de práctica después de cada una, más exámenes de práctica completos.",
-      tutor_m1:"7 pistas de certificación",tutor_m2:"Cada objetivo del examen",tutor_m3:"Abren pronto",
-      tutor_cta:"Ver los cursos",
-      premier_badge:"PREMIER · PRO",premier_call:"COMMAND CENTER",premier_h:"Premier",
-      premier_p:"Centro de comando para certificaciones con IA. Rastrea cada sesión, mide tu progreso, define tu fecha de certificación y sigue una hoja de ruta personalizada hacia el éxito en el examen.",
-      premier_m1:"Seguimiento de sesiones y analítica",premier_m2:"Define tu fecha de certificación",premier_m3:"Hoja de ruta de examen personalizada",
-      premier_cta:"Entrar a PREMIER",
-      enroll_q:"¿Inscribes a otra persona — o a una clase entera?",
-      enroll_cta:"INSCRIBE A ALGUIEN →",
-      cohort_cta:"INSCRIBE A UNA CLASE ENTERA →",
-      try_cta:"PRUEBA 10 PREGUNTAS GRATIS →",courses_cta:"CURSOS COMPLETOS <small>PRÓXIMAMENTE</small> →",
+      nav_plans:"Cursos y planes",nav_free:"Práctica gratis",nav_about:"Acerca de",nav_support:"Soporte",nav_signin:"Iniciar sesión",
+      h1a:"Aprueba tu certificación de TI.",h1b:"Apréndela de verdad.",
+      subline:"Entrenamiento interactivo y multilingüe para cualquiera: por tu cuenta, patrocinado por tu empleador o con toda tu clase. Creado por un instructor activo de redes.",
+      try_cta:"Prueba 10 preguntas gratis",pick_cta:"Elige un curso",
+      stat1_l:"visitas de estudio",stat2_l:"7 pistas de certificación",
+      plans_eyebrow:"UNA PLATAFORMA. DOS FORMAS DE ESTUDIAR.",
+      cp_badge:"UN CURSO",cp_h:"Pase de Curso",
+      cp_p:"Elige una certificación y aprende cada objetivo del examen: una lección y luego preguntas de práctica después de cada una.",
+      cp_m1:"Un curso a tu elección",cp_m2:"Cada objetivo del examen",cp_m3:"Seguimiento de progreso y certificado",cp_m4:"Contenido del curso en inglés",
+      cp_price:"pago único · 90 días",cp_soon:"LAS INSCRIPCIONES ABREN PRONTO",cp_cta:"Elige un curso",
+      pr_badge:"ACCESO TOTAL",
+      pr_p:"Todos los cursos, más el motor de exámenes adaptativos que te dice cuándo estás listo.",
+      pr_m1:"Los 7 cursos incluidos (en inglés)",pr_m2:"Exámenes de práctica adaptativos",pr_m3:"Predicción de aprobación, fecha de examen, hoja de ruta",pr_m4:"Exámenes en EN, ES, FR, HT",
+      pr_price:"al mes · sin renovación automática",pr_cta:"Hazte Premier",
+      free_badge:"GRATIS · SIN REGISTRO",free_h:"Práctica Gratuita",
+      free_p:"Simuladores de examen y cuestionarios que ya usan miles. Elige tu examen y empieza ahora.",
+      free_lang:"Inglés · Español",free_go:"Empieza a practicar →",
+      tools_call:"HERRAMIENTAS DE ESTUDIO",tools_h:"Tarjetas, OSI, VLSM",tools_go:"Ver todas →",
+      enroll_q:"¿Inscribes a otra persona o a una clase entera?",enroll_cta:"INSCRIBE A ALGUIEN →",cohort_cta:"INSCRIBE A UNA CLASE ENTERA →",
       foot:"Creado por un instructor activo de redes · Prince George's Community College"
     },
     fr:{
-      nav_about:"À propos",nav_support:"Support",
-      eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
-      headline:'Certifications',
-      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
-      subline:"Formation interactive et multilingue créée par un instructeur actif en réseautique.",
-      stat1_l:"visites d'apprenants",stat2_l:"filières de certification",stat3_l:"multilingue",
-      path:"TROIS FAÇONS DE COMMENCER — CHOISIS LA TIENNE",
-      free_badge:"GRATUIT · SANS COMPTE",free_call:"SYSTÈMES DE PRATIQUE",free_h:"Pratique Gratuite",
-      free_p:"Les systèmes de pratique utilisés par des milliers d'étudiants — simulateurs d'examen, quiz et outils d'étude. Ouvert, gratuit, sans inscription.",
-      free_m1:"7 systèmes de pratique d'examen",free_m2:"Outils VLSM et OSI",free_m3:"Langues · EN / ES",
-      free_cta:"Ouvrir la Pratique Gratuite",
-      tutor_badge:"COURS COMPLETS",tutor_h:"Cours CertPrep",
-      tutor_p:"Un contenu d'étude complet pour chaque objectif de l'examen : une leçon, puis des questions d'entraînement après chacune, plus des examens blancs complets.",
-      tutor_m1:"7 filières de certification",tutor_m2:"Chaque objectif de l'examen",tutor_m3:"Ouverture bientôt",
-      tutor_cta:"Voir les cours",
-      premier_badge:"PREMIER · PRO",premier_call:"CENTRE DE COMMANDE",premier_h:"Premier",
-      premier_p:"Centre de commande de certification guidé par IA. Suis chaque session, mesure tes progrès, fixe ta date de certification et suis une feuille de route personnalisée vers la réussite à l'examen.",
-      premier_m1:"Suivi des sessions et analytique",premier_m2:"Fixe ta date de certification",premier_m3:"Feuille de route d'examen personnalisée",
-      premier_cta:"Entrer dans PREMIER",
-      enroll_q:"Vous inscrivez quelqu'un d'autre — ou toute une classe ?",
-      enroll_cta:"INSCRIRE QUELQU'UN →",
-      cohort_cta:"INSCRIRE UNE CLASSE ENTIÈRE →",
-      try_cta:"ESSAIE 10 QUESTIONS GRATUITES →",courses_cta:"COURS COMPLETS <small>BIENTÔT</small> →",
+      nav_plans:"Cours et formules",nav_free:"Pratique gratuite",nav_about:"À propos",nav_support:"Support",nav_signin:"Se connecter",
+      h1a:"Réussis ta certification IT.",h1b:"Apprends-la pour de vrai.",
+      subline:"Une formation interactive et multilingue pour tous : seul, parrainé par ton employeur ou avec toute ta classe. Créée par un instructeur actif en réseautique.",
+      try_cta:"Essaie 10 questions gratuites",pick_cta:"Choisis un cours",
+      stat1_l:"visites d'apprenants",stat2_l:"7 filières de certification",
+      plans_eyebrow:"UNE PLATEFORME. DEUX FAÇONS D'ÉTUDIER.",
+      cp_badge:"UN COURS",cp_h:"Pass Cours",
+      cp_p:"Choisis une certification et apprends chaque objectif de l'examen : une leçon, puis des questions d'entraînement après chacune.",
+      cp_m1:"Un cours au choix",cp_m2:"Chaque objectif de l'examen",cp_m3:"Suivi des progrès et certificat",cp_m4:"Contenu du cours en anglais",
+      cp_price:"paiement unique · 90 jours",cp_soon:"INSCRIPTIONS BIENTÔT OUVERTES",cp_cta:"Choisir un cours",
+      pr_badge:"ACCÈS TOTAL",
+      pr_p:"Tous les cours, plus le moteur d'examens adaptatifs qui te dit quand tu es prêt.",
+      pr_m1:"Les 7 cours inclus (en anglais)",pr_m2:"Examens blancs adaptatifs",pr_m3:"Prédiction de réussite, date d'examen, feuille de route",pr_m4:"Examens en EN, ES, FR, HT",
+      pr_price:"par mois · sans renouvellement automatique",pr_cta:"Passer à Premier",
+      free_badge:"GRATUIT · SANS INSCRIPTION",free_h:"Pratique Gratuite",
+      free_p:"Des simulateurs d'examen et des quiz déjà utilisés par des milliers d'étudiants. Choisis ton examen et commence maintenant.",
+      free_lang:"Anglais · Espagnol",free_go:"Commencer →",
+      tools_call:"OUTILS D'ÉTUDE",tools_h:"Cartes, OSI, VLSM",tools_go:"Voir tous les outils →",
+      enroll_q:"Vous inscrivez quelqu'un d'autre ou toute une classe ?",enroll_cta:"INSCRIRE QUELQU'UN →",cohort_cta:"INSCRIRE UNE CLASSE ENTIÈRE →",
       foot:"Créé par un instructeur actif en réseautique · Prince George's Community College"
     },
     ht:{
-      nav_about:"Konsènan",nav_support:"Sipò",
-      eyebrow:"DIGITALEDGE LEARNING SYSTEMS",
-      headline:'Sètifikasyon',
-      certList:'<span class="c-green">A+</span> <span class="c-orange">Network+</span> <span class="c-green">Security+</span> <span class="c-orange">AWS</span> <span class="c-green">CCNA</span> <span class="c-orange">Python</span>',
-      subline:"Fòmasyon entèraktif nan plizyè lang ki kreye pa yon enstriktè aktif nan rezo.",
-      stat1_l:"vizit elèv",stat2_l:"filyè sètifikasyon",stat3_l:"miltileng",
-      path:"TWA FASON POU KÒMANSE — CHWAZI PA W",
-      free_badge:"GRATIS · SAN KONT",free_call:"SISTÈM PRATIK",free_h:"Pratik Gratis",
-      free_p:"Sistèm pratik dè milye elèv deja itilize — simulatè egzamen, quiz, ak zouti etid. Louvri, gratis, san enskripsyon.",
-      free_m1:"7 sistèm pratik egzamen",free_m2:"Zouti VLSM ak OSI",free_m3:"Lang yo · EN / ES",
-      free_cta:"Louvri Pratik Gratis",
-      tutor_badge:"KOU KONPLÈ",tutor_h:"Kou CertPrep",
-      tutor_p:"Materyèl etid konplè pou chak objektif egzamen an: yon leson, answit kesyon pratik apre chak leson, plis egzamen pratik konplè.",
-      tutor_m1:"7 filyè sètifikasyon",tutor_m2:"Chak objektif egzamen an",tutor_m3:"Ap louvri byento",
-      tutor_cta:"Gade kou yo",
-      premier_badge:"PREMIER · PRO",premier_call:"SANT KOMANNMAN",premier_h:"Premier",
-      premier_p:"Sant kòmandman sètifikasyon gide pa AI. Swiv chak sesyon, mezire pwogrè w, fikse dat sètifikasyon w, epi swiv yon fèy wout pèsonalize pou reyisi egzamen an.",
-      premier_m1:"Swiv sesyon ak analiz",premier_m2:"Fikse dat sètifikasyon w",premier_m3:"Fèy wout egzamen pèsonalize",
-      premier_cta:"Antre nan PREMIER",
-      enroll_q:"W ap enskri yon lòt moun — oswa yon klas antye?",
-      enroll_cta:"ENSKRI YON MOUN →",
-      cohort_cta:"ENSKRI YON KLAS ANTYE →",
-      try_cta:"ESEYE 10 KESYON GRATIS →",courses_cta:"KOU KONPLÈ <small>BYENTO</small> →",
+      nav_plans:"Kou ak plan",nav_free:"Pratik gratis",nav_about:"Konsènan",nav_support:"Sipò",nav_signin:"Konekte",
+      h1a:"Pase sètifikasyon IT ou.",h1b:"Aprann li pou tout bon.",
+      subline:"Fòmasyon entèraktif nan plizyè lang pou tout moun: poukont ou, ak sipò patwon ou, oswa ak tout klas ou. Kreye pa yon enstriktè aktif nan rezo.",
+      try_cta:"Eseye 10 kesyon gratis",pick_cta:"Chwazi yon kou",
+      stat1_l:"vizit elèv",stat2_l:"7 filyè sètifikasyon",
+      plans_eyebrow:"YON PLATFÒM. DE FASON POU ETIDYE.",
+      cp_badge:"YON KOU",cp_h:"Pas Kou",
+      cp_p:"Chwazi yon sètifikasyon epi aprann chak objektif egzamen an: yon leson, answit kesyon pratik apre chak leson.",
+      cp_m1:"Yon kou ou chwazi",cp_m2:"Chak objektif egzamen an",cp_m3:"Swiv pwogrè ak sètifika",cp_m4:"Kontni kou a an anglè",
+      cp_price:"yon sèl peman · 90 jou",cp_soon:"ENSKRIPSYON AP LOUVRI BYENTO",cp_cta:"Chwazi yon kou",
+      pr_badge:"AKSÈ TOTAL",
+      pr_p:"Tout kou yo, plis motè egzamen adaptif ki di w lè w pare.",
+      pr_m1:"7 kou yo enkli (an anglè)",pr_m2:"Egzamen pratik adaptif",pr_m3:"Prediksyon reyisit, dat egzamen, fèy wout",pr_m4:"Egzamen an EN, ES, FR, HT",
+      pr_price:"pa mwa · pa gen renouvèlman otomatik",pr_cta:"Antre nan Premier",
+      free_badge:"GRATIS · SAN ENSKRIPSYON",free_h:"Pratik Gratis",
+      free_p:"Simulatè egzamen ak quiz dè milye elèv deja itilize. Chwazi egzamen ou epi kòmanse kounye a.",
+      free_lang:"Anglè · Panyòl",free_go:"Kòmanse pratike →",
+      tools_call:"ZOUTI ETID",tools_h:"Kat, OSI, VLSM",tools_go:"Gade tout zouti yo →",
+      enroll_q:"W ap enskri yon lòt moun oswa yon klas antye?",enroll_cta:"ENSKRI YON MOUN →",cohort_cta:"ENSKRI YON KLAS ANTYE →",
       foot:"Kreye pa yon enstriktè aktif nan rezo · Prince George's Community College"
     }
   };
 
   function setLang(l){
+    const d=I18N[l]||I18N.en;
     document.documentElement.lang=l;
-    const d=I18N[l];
     document.querySelectorAll('[data-i18n]').forEach(e=>{
       const k=e.getAttribute('data-i18n');
-      if(d[k]!==undefined)e.innerHTML=d[k];
+      if(d[k]!==undefined)e.textContent=d[k];
     });
     ['en','es','fr','ht'].forEach(code=>{
-      document.getElementById('btn-'+code).classList.toggle('active',l===code);
+      const b=document.getElementById('btn-'+code);
+      b.classList.toggle('active',l===code);
+      b.setAttribute('aria-pressed',l===code?'true':'false');
     });
     try{localStorage.setItem('de_lang',l)}catch(e){}
   }
 
   // restore language choice carried from free-practice page (or prior visit)
-  try{const saved=localStorage.getItem('de_lang');if(saved&&saved!=='en')setLang(saved);}catch(e){}
+  try{const saved=localStorage.getItem('de_lang');if(saved&&saved!=='en'&&I18N[saved])setLang(saved);}catch(e){}
 
   // live learner-visit counter
   (async()=>{
