@@ -8,45 +8,45 @@
 <meta name="description" content="Free IT certification practice — A+, Network+, Security+, AWS, CCNA, Python. Exam sims and study tools. No login, English & Spanish." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Chakra+Petch:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0b0e;--bg-2:#0d0f14;--panel:#12141a;--panel-2:#171a22;--line:#252a35;
-    --ember:#ff6b00;--ember-soft:#ff8a3d;--cyan:#36d6ff;--cyan-soft:#7fe6ff;
-    --fg:#e8eaed;--muted:#8a93a3;--dim:#5c6473;
-    --display:'Orbitron',sans-serif;--body:'Chakra Petch',sans-serif;--mono:'Share Tech Mono',monospace;
+    --bg:#0A0820;--bg-2:#0D0B26;--panel:#110E2C;--panel-2:#16123A;--line:#2B2760;
+    --ember:#FF2D95;--ember-soft:#FF6FB5;--accent-fill:#DB1478;--cyan:#3FD0FF;--cyan-soft:#7FE0FF;--gold:#8A4DFF;--green:#3FD0FF;
+    --fg:#EDEBFF;--muted:#D6D2F5;--dim:#BDB7E8;
+    --display:'Unbounded',sans-serif;--body:'Chakra Petch',sans-serif;--mono:'Martian Mono',monospace;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.55;
     -webkit-font-smoothing:antialiased;overflow-x:hidden;
-    background-image:radial-gradient(900px 480px at 50% -8%,rgba(255,107,0,.10),transparent 62%),radial-gradient(620px 380px at 110% 8%,rgba(54,214,255,.06),transparent 60%);}
-  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.35;
+    background-image:radial-gradient(rgba(127,224,255,.13) 1px,transparent 1.4px);background-size:22px 22px;}
+  body::after{display:none;content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.35;
     background:repeating-linear-gradient(to bottom,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;}
   a{color:inherit;text-decoration:none}
 
   .nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
-    padding:14px clamp(16px,4vw,42px);background:rgba(10,11,14,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+    padding:14px clamp(16px,4vw,42px);background:rgba(10,8,32,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
   .brand{display:flex;align-items:center;gap:11px}
-  .brand svg{width:24px;height:24px;color:var(--ember);filter:drop-shadow(0 0 8px rgba(255,107,0,.55))}
-  .brand .name{font-family:var(--display);font-weight:900;letter-spacing:1px;font-size:18px}
+  .brand svg{width:32px;height:32px}
+  .brand .name{font-family:var(--display);font-weight:700;letter-spacing:.08em;font-size:17px}
   .brand .name .edge{color:var(--ember)}
   .nav-right{display:flex;align-items:center;gap:clamp(14px,3vw,24px)}
   .nav-right a{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.5px}
   .nav-right a:hover{color:var(--fg)}
   .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:12px;}
   .lang button{background:transparent;border:0;color:var(--dim);padding:6px 12px;cursor:pointer;letter-spacing:.5px;transition:.18s;}
-  .lang button.active{background:var(--ember);color:#0a0a0a;font-weight:700}
+  .lang button.active{background:var(--accent-fill);color:#fff;font-weight:500}
 
   .wrap{position:relative;z-index:2;width:min(1180px,94%);margin:0 auto}
 
-  .page-head{position:relative;z-index:2;padding:clamp(40px,7vw,70px) clamp(18px,5vw,24px) clamp(12px,3vw,22px);max-width:760px}
+  .page-head{position:relative;z-index:2;width:min(1180px,94%);margin:0 auto;padding:clamp(40px,7vw,70px) 0 clamp(12px,3vw,22px)}
   .crumb{font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--dim);margin-bottom:14px}
   .crumb a{color:var(--cyan)}
   .free-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;
     color:#0a0a0a;background:var(--ember);border-radius:7px;padding:5px 11px;font-weight:700;margin-bottom:16px;
     box-shadow:0 0 16px -4px var(--ember)}
-  .page-head h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,5vw,46px);margin:0 0 12px;line-height:1.05}
+  .page-head h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,46px);margin:0 0 12px;line-height:1.05}
   .page-head p{color:var(--muted);font-size:clamp(15px,2.2vw,18px);margin:0;max-width:52ch}
 
   .sec-head{display:flex;align-items:baseline;gap:14px;margin:clamp(28px,5vw,48px) 0 18px;flex-wrap:wrap}
@@ -59,7 +59,7 @@
     background:linear-gradient(180deg,var(--panel-2),var(--panel));transition:.2s;overflow:hidden;}
   .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--ember));opacity:.55;transition:.2s}
   .card.cy{--accent:var(--cyan)}
-  .card:hover{transform:translateY(-3px);border-color:#39414f;box-shadow:0 16px 40px -24px rgba(0,0,0,.9)}
+  .card:hover{transform:translateY(-3px);border-color:#4A4596;box-shadow:0 16px 40px -24px rgba(0,0,0,.9)}
   .card:hover::before{opacity:1}
   .card .code{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--accent,var(--ember))}
   .card h3{font-family:var(--display);font-weight:700;font-size:16px;margin:7px 0 6px}
@@ -71,7 +71,7 @@
   .tools{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
   .tool{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);
     border-radius:11px;padding:15px 18px;background:var(--bg-2);transition:.2s;}
-  .tool:hover{border-color:#39414f;background:var(--panel)}
+  .tool:hover{border-color:#4A4596;background:var(--panel)}
   .tool .t-name{font-family:var(--body);font-weight:600;font-size:14px}
   .tool .t-desc{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.3px}
   .tool .t-go{font-family:var(--mono);font-size:12px;color:var(--cyan)}
@@ -97,6 +97,7 @@
     background:linear-gradient(to right,#fb923c,#f87171,#4ade80);-webkit-background-clip:text;background-clip:text;color:transparent}
   .foot-note{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.5px}
 
+  @media (max-width:600px){ .nav{flex-wrap:wrap;row-gap:10px;padding:12px 16px} .nav-right{width:100%;flex-wrap:wrap;justify-content:flex-start;gap:14px} .nav-right .lang{margin-left:auto} }
   @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} html{scroll-behavior:auto} }
   :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
 </style>
@@ -105,8 +106,8 @@
 
 <header class="nav">
   <a class="brand" href="index.html" aria-label="DigitalEdge home">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l3.5 6h6.5l-5.2 3.8 2 6.2L12 16l-6.8 2.9 2-6.2L2 8h6.5L12 2z"/></svg>
-    <span class="name">DIGITAL<span class="edge">EDGE</span></span>
+    <svg viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#FF2D95" stroke-width="2.4"/><polygon points="17,10 23.5,13.7 23.5,20.3 17,24 10.5,20.3 10.5,13.7" fill="#3FD0FF"/></svg>
+    <span class="name">DIGITALEDGE</span>
   </a>
   <nav class="nav-right">
     <a href="index.html" data-i18n="nav_home">← Home</a>
