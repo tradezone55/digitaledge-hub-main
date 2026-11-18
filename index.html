@@ -66,6 +66,9 @@
   .codes{position:absolute;inset:29%}
   .codes span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500;font-size:18px;color:var(--ink);text-shadow:0 0 12px var(--accent),0 0 26px var(--accent);opacity:0;animation:code 28s infinite}
   .codes .c1{animation-delay:4s}.codes .c2{animation-delay:8s}.codes .c3{animation-delay:12s}.codes .c4{animation-delay:16s}.codes .c5{animation-delay:20s}.codes .c6{animation-delay:24s}
+  /* satellite: a small glowing ball circling just inside the orb, like the Premier sphere */
+  .sat{position:absolute;inset:32%;border-radius:50%;border:1px solid rgba(255,255,255,.22);animation:spin 18s linear infinite}
+  .sat i{position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff6a00,#00f5d4 70%);box-shadow:0 0 12px rgba(255,106,0,.45),0 0 20px rgba(0,245,212,.35)}
   .orbit{position:absolute;inset:0;animation:spin 70s linear infinite}
   .bub{position:absolute;transform:translate(-50%,-50%)}
   .bub span{display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:var(--ground);border:2px solid var(--cyan);box-shadow:0 0 18px rgba(63,208,255,.6);font-family:var(--mono);font-size:11px;color:var(--ink);animation:spin 70s linear infinite reverse}
@@ -183,6 +186,7 @@
         <div class="ring r1"></div>
         <div class="ring r2"></div>
         <div class="orb"></div>
+        <div class="sat"><i></i></div>
         <div class="codes">
           <span class="c0">220-1201</span><span class="c1">220-1202</span><span class="c2">N10-009</span><span class="c3">200-301</span><span class="c4">SY0-801</span><span class="c5">PCEP-30-02</span><span class="c6">CLF-C02</span>
         </div>
@@ -231,7 +235,7 @@
           <li data-i18n="pr_m4">Exams in EN, ES, FR, HT</li>
         </ul>
         <div class="price"><b>$50</b> <span data-i18n="pr_price">per month · no auto-renewal</span></div>
-        <a class="btn btn-fill" href="https://nexus.digitaledgeprep.com/#pricing" data-i18n="pr_cta">Go Premier</a>
+        <a class="btn btn-fill" href="https://nexus.digitaledgeprep.com/#premier" data-i18n="pr_cta">Go Premier</a>
       </article>
     </div>
   </section>
